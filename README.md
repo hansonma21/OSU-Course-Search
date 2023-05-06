@@ -3,10 +3,10 @@ Django Project, deployed on Heroku, that allows OSU students to search for their
 
 # Currently in a VERY ALPHA build
 At the moment, there is no seed data, but you can run
-'''python manage.py createsuperuser'''
+```python manage.py createsuperuser```
 Follow the directions to create an admin profile. From there run
-'''python manage.py migrate'''
-'''python manage.py runserver'''
+```python manage.py migrate```
+```python manage.py runserver```
 This will run migrations and run a local server of this Django project. 
 
 # 0.1
