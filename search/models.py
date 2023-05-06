@@ -8,17 +8,17 @@ class Term(models.Model):
 
 
 class Department(models.Model):
-    """An individual department, has Courses"""
+    """An individual department; has Courses"""
     name = models.CharField(max_length=50) # e.g. Computer Science and Engineering
     short_name = models.CharField(max_length=20) # e.g. CSE
 
 
 class Course(models.Model):
-    """An individual course entity, belongs to a department"""
+    """An individual course entity; belongs to a department"""
     name = models.TextField() # e.g. Systems I: Introduction...
     department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
     number = models.CharField(max_length=20) # e.g. 2421
-    description = models.TextField() 
+    description = models.TextField() # e.g. Introduction to computer architecture at machine...
 
 
 class Course_Term(models.Model):
@@ -27,10 +27,20 @@ class Course_Term(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE) # referencing a Course
 
 
+class Instructor(models.Model):
+    """An individual instructor entity; can belong to many sections"""
+    osu_identifier = models.IntegerField() # unique OSU identifier for instructors as found in Salary database (e.g. 100098)
+    first_name = models.CharField(max_length=50) # e.g. Mukul
+    last_name = models.CharField(max_length=50) # e.g. Soundarajan
+    department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
+
+
 class Course_Section(models.Model):
-    """An individual section entity, belongs to a Course_Term (a Course and a Term)"""
+    """An individual section entity; belongs to a Course_Term (a Course and a Term), can have many instructors"""
     course_term = models.ForeignKey(Course_Term, on_delete=models.CASCADE) # referencing a Course_Term
     
+    instructors = models.ManyToManyField(Instructor) # only need one many to many field to represent many to many relationship of sections and instructors
+
     section_id = models.CharField(max_length=10) # e.g. 9510
     section_info = models.CharField(max_length=20) # e.g. LEC-0010
     days_and_times = models.CharField(max_length=50) # e.g. TuTh 9:35AM - 10:55 AM
@@ -40,9 +50,3 @@ class Course_Section(models.Model):
     availability = models.CharField(max_length=15) # one of Available, Waitlist, or Closed
 
 
-class Instructor(models.Model):
-    """An individual instructor entity"""
-    osu_identifier = models.IntegerField() # unique OSU identifier for instructors as found in Salary database (e.g. 100098)
-    first_name = models.CharField(max_length=50) # e.g. Mukul
-    last_name = models.CharField(max_length=50) # e.g. Soundarajan
-    department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
