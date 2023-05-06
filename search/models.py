@@ -41,7 +41,7 @@ class Course_Section(models.Model):
     
     instructors = models.ManyToManyField(Instructor) # only need one many to many field to represent many to many relationship of sections and instructors
 
-    section_id = models.CharField(max_length=10) # e.g. 9510
+    section_id = models.IntegerField() # e.g. 9510
     section_info = models.CharField(max_length=20) # e.g. LEC-0010
     days_and_times = models.CharField(max_length=50) # e.g. TuTh 9:35AM - 10:55 AM
     start_date = models.DateTimeField() # e.g. 08/22/2023

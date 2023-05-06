@@ -1,0 +1,7 @@
+<h1>OSU Course Search</h1>
+
+<form action="{% url 'search_results' %}" method="get">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
