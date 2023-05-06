@@ -19,15 +19,20 @@ class SearchResultsView(generic.ListView):
     model = Course_Section
     template_name = "search/search_results.html"
     form_class = SearchForm
+    context_object_name = "object_list"
 
     def get_queryset(self):
         form = self.form_class(self.request.GET)
         if form.is_valid():
-            return Course_Section.objects.filter(course_term__term__name__iexact=form.cleaned_data['term'],
-                                                 course_term__course__department__short_name__iexact=form.cleaned_data['department'],
-                                                 course_term__course__number__iexact=form.cleaned_data['number'],
-                                                 instructors__last_name__iexact=form.cleaned_data['instructor_last_name']
-                                                 )
+            return Course_Section.objects.filter(
+                                        course_term__course__number__iexact=form.cleaned_data['number'],
+                                        instructors__last_name__iexact=form.cleaned_data['instructor_last_name']
+                                        )
+            # return Course_Section.objects.filter(course_term__term__name__iexact=form.cleaned_data['term'],
+            #                                      course_term__course__department__short_name__iexact=form.cleaned_data['department'],
+            #                                      course_term__course__number__iexact=form.cleaned_data['number'],
+            #                                      instructors__last_name__iexact=form.cleaned_data['instructor_last_name']
+            #                                      )
         else:
             return Course_Section.objects.none()
 

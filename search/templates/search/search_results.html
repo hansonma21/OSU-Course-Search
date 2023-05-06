@@ -14,7 +14,11 @@
             <td>{{ course_section.section_info }}</td>
             <td>{{ course_section.days_and_times }}</td>
             <td>{{ course_section.room }}</td>
-            <td>{{ course_section.instructors }}</td>
+            <td>
+                {% for instructor in course_section.instructors.all %}
+                    {{ instructor.first_name }} {{ instructor.last_name }},
+                {% endfor %}
+            </td>
             <td>{{ course_section.start_date }} - {{ course_section.end_date }}</td>
             <td>{{ course_section.availability }}</td>
         </tr>
