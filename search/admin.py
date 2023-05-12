@@ -1,10 +1,13 @@
 from django.contrib import admin
+from django_q import models as q_models
+from django_q import admin as q_admin
 from .models import *
 
 # Register your models here.
 class CourseInLine(admin.TabularInline):
     model = Course
     extra = 1
+
 
 class DepartmentAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -16,11 +19,13 @@ class DepartmentAdmin(admin.ModelAdmin):
     list_filter = ["name"]
     search_fields = ["name", "short_name"]
 
+
 class TermAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {"fields": ["osu_id"]}),
         ("Term Information", {"fields": ["name"]})
     ]
+
 
 class InstructorAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -28,7 +33,14 @@ class InstructorAdmin(admin.ModelAdmin):
         ("Name", {"fields": ["first_name", "last_name"]})
     ]
 
+
 class Course_SectionAdmin(admin.ModelAdmin):
+    fieldsets = [
+
+    ]
+
+
+class BruhAdmin(q_admin.ScheduleAdmin):
     fieldsets = [
 
     ]
@@ -38,3 +50,5 @@ admin.site.register(Term, TermAdmin)
 admin.site.register(Department, DepartmentAdmin)
 admin.site.register(Instructor, InstructorAdmin)
 admin.site.register(Course_Section, Course_SectionAdmin)
+# admin.site.register(q_models., BruhAdmin)
+# admin.site.register()
