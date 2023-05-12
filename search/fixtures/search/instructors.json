@@ -1,3 +1,706 @@
-// format json correctly according to django docs
-// then you call python manage.py loaddata instructors.json
-// make sure to add a procfile release (look up how to do properly) for loaddata
+[
+    {
+        "model": "search.instructor",
+        "pk": 1,
+        "fields": {
+            "first_name": "Trina",
+            "last_name": "Phillips",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 2,
+        "fields": {
+            "first_name": "Armada",
+            "last_name": "Henderson",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 3,
+        "fields": {
+            "first_name": "Ryana",
+            "last_name": "Munford",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 4,
+        "fields": {
+            "first_name": "Alvian",
+            "last_name": "Williams",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 5,
+        "fields": {
+            "first_name": "Kerra",
+            "last_name": "Carson",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 6,
+        "fields": {
+            "first_name": "Tuerei",
+            "last_name": "Williams",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 7,
+        "fields": {
+            "first_name": "Chila",
+            "last_name": "Thomas",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 8,
+        "fields": {
+            "first_name": "Nora",
+            "last_name": "Yepez-Ornelas",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 9,
+        "fields": {
+            "first_name": "Robert",
+            "last_name": "Decatur",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 10,
+        "fields": {
+            "first_name": "Jay",
+            "last_name": "Kasey",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 11,
+        "fields": {
+            "first_name": "Hannah",
+            "last_name": "Bechtold",
+            "department": [
+                "ACADAFF"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 12,
+        "fields": {
+            "first_name": "Dave",
+            "last_name": "Filipi",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 13,
+        "fields": {
+            "first_name": "Benjamin",
+            "last_name": "Zelkowicz",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 14,
+        "fields": {
+            "first_name": "Kyoung",
+            "last_name": "Swearingen",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 15,
+        "fields": {
+            "first_name": "Zachary",
+            "last_name": "Winegardner",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 16,
+        "fields": {
+            "first_name": "Stephen",
+            "last_name": "Conroy",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 17,
+        "fields": {
+            "first_name": "Matt",
+            "last_name": "Lewis",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 18,
+        "fields": {
+            "first_name": "Jeremy",
+            "last_name": "Patterson",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 19,
+        "fields": {
+            "first_name": "Taylor",
+            "last_name": "Olsen",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 20,
+        "fields": {
+            "first_name": "Weidi",
+            "last_name": "Zhang",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 21,
+        "fields": {
+            "first_name": "Vita",
+            "last_name": "Berezina-Blackburn",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 22,
+        "fields": {
+            "first_name": "Alex",
+            "last_name": "Oliszewski",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 23,
+        "fields": {
+            "first_name": "Oded",
+            "last_name": "Huberman",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 24,
+        "fields": {
+            "first_name": "Scott",
+            "last_name": "Swearingen",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 25,
+        "fields": {
+            "first_name": "Shadrick",
+            "last_name": "Addy",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 26,
+        "fields": {
+            "first_name": "Norah",
+            "last_name": "Zuniga-Shaw",
+            "department": [
+                "ACCAD"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 27,
+        "fields": {
+            "first_name": "Cynthia",
+            "last_name": "Turner",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 28,
+        "fields": {
+            "first_name": "Marc",
+            "last_name": "Smith",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 29,
+        "fields": {
+            "first_name": "Diane",
+            "last_name": "King",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 30,
+        "fields": {
+            "first_name": "Tzachi",
+            "last_name": "Zach",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 31,
+        "fields": {
+            "first_name": "Richard",
+            "last_name": "Dietrich",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 32,
+        "fields": {
+            "first_name": "Ewa",
+            "last_name": "Sletten",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 33,
+        "fields": {
+            "first_name": "Rick",
+            "last_name": "Young",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 34,
+        "fields": {
+            "first_name": "Douglas",
+            "last_name": "Schroeder",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 35,
+        "fields": {
+            "first_name": "Kathy",
+            "last_name": "Wantuch",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 36,
+        "fields": {
+            "first_name": "Darren",
+            "last_name": "Roulstone",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 37,
+        "fields": {
+            "first_name": "Eric",
+            "last_name": "Holzman",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 38,
+        "fields": {
+            "first_name": "John",
+            "last_name": "Keyser",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 39,
+        "fields": {
+            "first_name": "Alan",
+            "last_name": "Lacko",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 40,
+        "fields": {
+            "first_name": "Matthew",
+            "last_name": "Hunter",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 41,
+        "fields": {
+            "first_name": "Lawrence",
+            "last_name": "Tomassini",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 42,
+        "fields": {
+            "first_name": "Rachel",
+            "last_name": "Geoffroy",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 43,
+        "fields": {
+            "first_name": "Brian",
+            "last_name": "Monsen",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 44,
+        "fields": {
+            "first_name": "Andrew",
+            "last_name": "Buskirk",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 45,
+        "fields": {
+            "first_name": "Ania",
+            "last_name": "Brown",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 46,
+        "fields": {
+            "first_name": "Marissa",
+            "last_name": "Nelson",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 47,
+        "fields": {
+            "first_name": "Sophia",
+            "last_name": "Hamm",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 48,
+        "fields": {
+            "first_name": "Michael",
+            "last_name": "Easterday",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 49,
+        "fields": {
+            "first_name": "Carlos",
+            "last_name": "Corona",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 50,
+        "fields": {
+            "first_name": "David",
+            "last_name": "Wallin",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 51,
+        "fields": {
+            "first_name": "Prakash",
+            "last_name": "Mulchandani",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 52,
+        "fields": {
+            "first_name": "Jon",
+            "last_name": "Kerr",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 53,
+        "fields": {
+            "first_name": "Stephanie",
+            "last_name": "Lewis",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 54,
+        "fields": {
+            "first_name": "Laura",
+            "last_name": "Feustel",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 55,
+        "fields": {
+            "first_name": "Joseph",
+            "last_name": "Irvine",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 56,
+        "fields": {
+            "first_name": "Norman",
+            "last_name": "Colter",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 57,
+        "fields": {
+            "first_name": "Waleed",
+            "last_name": "Muhanna",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 58,
+        "fields": {
+            "first_name": "Rob",
+            "last_name": "Whittington",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 59,
+        "fields": {
+            "first_name": "Bruce",
+            "last_name": "Barnes",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 60,
+        "fields": {
+            "first_name": "Chad",
+            "last_name": "Thomas",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 61,
+        "fields": {
+            "first_name": "David",
+            "last_name": "Williams",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 62,
+        "fields": {
+            "first_name": "Zahn",
+            "last_name": "Bozanic",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 63,
+        "fields": {
+            "first_name": "Brian",
+            "last_name": "Mittendorf",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 64,
+        "fields": {
+            "first_name": "Jennifer",
+            "last_name": "Glenn",
+            "department": [
+                "ACCTMIS"
+            ]
+        }
+    }
+]

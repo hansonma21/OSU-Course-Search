@@ -1,0 +1,26 @@
+[
+    {
+        "model": "search.term",
+        "pk": 1,
+        "fields": {
+            "osu_id": "1232",
+            "name": "SP23"
+        }
+    },
+    {
+        "model": "search.term",
+        "pk": 2,
+        "fields": {
+            "osu_id": "1234",
+            "name": "SU23"
+        }
+    },
+    {
+        "model": "search.term",
+        "pk": 3,
+        "fields": {
+            "osu_id": "1238",
+            "name": "AU23"
+        }
+    }
+]

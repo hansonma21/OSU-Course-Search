@@ -1,0 +1,2002 @@
+[
+    {
+        "model": "search.department",
+        "pk": 1,
+        "fields": {
+            "name": "Academic Affairs",
+            "short_name": "ACADAFF"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 2,
+        "fields": {
+            "name": "Accounting and Management Info",
+            "short_name": "ACCTMIS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 3,
+        "fields": {
+            "name": "Adv Computing Cntr Arts&Design",
+            "short_name": "ACCAD"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 4,
+        "fields": {
+            "name": "Aerospace Engineering",
+            "short_name": "AEROENG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 5,
+        "fields": {
+            "name": "African American & African Std",
+            "short_name": "AFAMAST"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 6,
+        "fields": {
+            "name": "Agricul Envrmntl & Devlop Econ",
+            "short_name": "AEDECON"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 7,
+        "fields": {
+            "name": "Agricultural Comm, Ed & Ldrshp",
+            "short_name": "ACEL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 8,
+        "fields": {
+            "name": "Agricultural Communication",
+            "short_name": "AGRCOMM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 9,
+        "fields": {
+            "name": "Agricultural Systems Mgmt",
+            "short_name": "AGSYSMT"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 10,
+        "fields": {
+            "name": "Agriscience Education",
+            "short_name": "ASE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 11,
+        "fields": {
+            "name": "Air Force Aerospace Studies",
+            "short_name": "AIRSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 12,
+        "fields": {
+            "name": "American Indian Studies",
+            "short_name": "AMINSTS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 13,
+        "fields": {
+            "name": "American Sign Language",
+            "short_name": "ASL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 14,
+        "fields": {
+            "name": "Anatomy",
+            "short_name": "ANATOMY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 15,
+        "fields": {
+            "name": "Animal Sciences",
+            "short_name": "ANIMSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 16,
+        "fields": {
+            "name": "Animal Sciences Technology",
+            "short_name": "ANMLTEC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 17,
+        "fields": {
+            "name": "Anthropology",
+            "short_name": "ANTHROP"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 18,
+        "fields": {
+            "name": "Arabic",
+            "short_name": "ARABIC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 19,
+        "fields": {
+            "name": "Architecture",
+            "short_name": "ARCH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 20,
+        "fields": {
+            "name": "Art",
+            "short_name": "ART"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 21,
+        "fields": {
+            "name": "Art Education",
+            "short_name": "ARTEDUC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 22,
+        "fields": {
+            "name": "Arts and Sciences",
+            "short_name": "ARTSSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 23,
+        "fields": {
+            "name": "Asian American Studies",
+            "short_name": "ASAMSTS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 24,
+        "fields": {
+            "name": "Astronomy",
+            "short_name": "ASTRON"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 25,
+        "fields": {
+            "name": "Athletic Training",
+            "short_name": "ATHTRNG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 26,
+        "fields": {
+            "name": "Atmospheric Sciences",
+            "short_name": "ATMOSSC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 27,
+        "fields": {
+            "name": "Aviation",
+            "short_name": "AVIATN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 28,
+        "fields": {
+            "name": "Biochemistry",
+            "short_name": "BIOCHEM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 29,
+        "fields": {
+            "name": "Bioenergy&Water Treatment Mgt",
+            "short_name": "BIOWMGT"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 30,
+        "fields": {
+            "name": "Bioethics",
+            "short_name": "BIOETHC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 31,
+        "fields": {
+            "name": "Biological Chem & Pharmacology",
+            "short_name": "BIOPHRM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 32,
+        "fields": {
+            "name": "Biology",
+            "short_name": "BIOLOGY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 33,
+        "fields": {
+            "name": "Biomedical Engineering",
+            "short_name": "BIOMEDE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 34,
+        "fields": {
+            "name": "Biomedical Informatics",
+            "short_name": "BMI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 35,
+        "fields": {
+            "name": "Biomedical Science",
+            "short_name": "BIOMSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 36,
+        "fields": {
+            "name": "Biomedical Sciences Grad Prog",
+            "short_name": "BSGP"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 37,
+        "fields": {
+            "name": "Biophysics",
+            "short_name": "BIOPHYS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 38,
+        "fields": {
+            "name": "Biotechnology",
+            "short_name": "BIOTECH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 39,
+        "fields": {
+            "name": "Bosnian/Croatian/Serbian",
+            "short_name": "BCS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 40,
+        "fields": {
+            "name": "Bus Admin: Operat & Bus Analyt",
+            "short_name": "BUSOBA"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 41,
+        "fields": {
+            "name": "Business Admin : Finance",
+            "short_name": "BUSFIN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 42,
+        "fields": {
+            "name": "Business Admin : Mgmt & HR",
+            "short_name": "BUSMHR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 43,
+        "fields": {
+            "name": "Business Admin:Marketing & Log",
+            "short_name": "BUSML"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 44,
+        "fields": {
+            "name": "Business Administration",
+            "short_name": "BUSADM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 45,
+        "fields": {
+            "name": "Business Technology",
+            "short_name": "BUSTEC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 46,
+        "fields": {
+            "name": "CONSORTIUM",
+            "short_name": "CONSRTM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 47,
+        "fields": {
+            "name": "Cancer Biology and Genetics",
+            "short_name": "CBG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 48,
+        "fields": {
+            "name": "Catalan",
+            "short_name": "CATALAN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 49,
+        "fields": {
+            "name": "Center for Lang, Lit & Culture",
+            "short_name": "CLLC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 50,
+        "fields": {
+            "name": "Chemical Physics",
+            "short_name": "CHEMPHY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 51,
+        "fields": {
+            "name": "Chemical and Biomolecular Eng",
+            "short_name": "CBE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 52,
+        "fields": {
+            "name": "Chemistry",
+            "short_name": "CHEM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 53,
+        "fields": {
+            "name": "Chinese",
+            "short_name": "CHINESE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 54,
+        "fields": {
+            "name": "City and Regional Planning",
+            "short_name": "CRPLAN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 55,
+        "fields": {
+            "name": "Civil Engineering",
+            "short_name": "CIVILEN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 56,
+        "fields": {
+            "name": "Classics",
+            "short_name": "CLAS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 57,
+        "fields": {
+            "name": "Clinical Research",
+            "short_name": "MCR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 58,
+        "fields": {
+            "name": "Communication",
+            "short_name": "COMM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 59,
+        "fields": {
+            "name": "Community Leadership",
+            "short_name": "COMLDR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 60,
+        "fields": {
+            "name": "Comparative Studies",
+            "short_name": "COMPSTD"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 61,
+        "fields": {
+            "name": "Computer Science & Engineering",
+            "short_name": "CSE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 62,
+        "fields": {
+            "name": "Construction Systems Mgmt",
+            "short_name": "CONSYSM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 63,
+        "fields": {
+            "name": "Consumer Sci: Con&Fam Fin Serv",
+            "short_name": "CSCFFS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 64,
+        "fields": {
+            "name": "Consumer Sci: Fashion & Retail",
+            "short_name": "CSFRST"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 65,
+        "fields": {
+            "name": "Consumer Sci: Hospitality Mgt",
+            "short_name": "CSHSPMG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 66,
+        "fields": {
+            "name": "Consumer Sciences",
+            "short_name": "CONSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 67,
+        "fields": {
+            "name": "Crop and Soil Technology",
+            "short_name": "CRPSOIL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 68,
+        "fields": {
+            "name": "Ctr for Study&Teaching Writing",
+            "short_name": "CSTW"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 69,
+        "fields": {
+            "name": "Czech",
+            "short_name": "CZECH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 70,
+        "fields": {
+            "name": "Dance",
+            "short_name": "DANCE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 71,
+        "fields": {
+            "name": "Dental Hygiene",
+            "short_name": "DENTHYG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 72,
+        "fields": {
+            "name": "Dentistry",
+            "short_name": "DENT"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 73,
+        "fields": {
+            "name": "Design",
+            "short_name": "DESIGN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 74,
+        "fields": {
+            "name": "Disability Studies",
+            "short_name": "DSABLST"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 75,
+        "fields": {
+            "name": "Doctor of Nursing Education",
+            "short_name": "DNE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 76,
+        "fields": {
+            "name": "Earth Sciences",
+            "short_name": "EARTHSC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 77,
+        "fields": {
+            "name": "East Asian Languages and Lit",
+            "short_name": "EALL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 78,
+        "fields": {
+            "name": "East European Lang and Lit",
+            "short_name": "EEURLL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 79,
+        "fields": {
+            "name": "Economics",
+            "short_name": "ECON"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 80,
+        "fields": {
+            "name": "Educ Sts: Counselor Education",
+            "short_name": "ESCE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 81,
+        "fields": {
+            "name": "Educ Sts: Cultural Foundations",
+            "short_name": "ESCFE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 82,
+        "fields": {
+            "name": "Educ Sts: Education Psychology",
+            "short_name": "ESEPSY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 83,
+        "fields": {
+            "name": "Educ Sts: Educational Admin",
+            "short_name": "ESEADM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 84,
+        "fields": {
+            "name": "Educ Sts: Educational Policy",
+            "short_name": "ESEPOL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 85,
+        "fields": {
+            "name": "Educ Sts: Higher Ed & Stdt Aff",
+            "short_name": "ESHESA"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 86,
+        "fields": {
+            "name": "Educ Sts: Learning Technologie",
+            "short_name": "ESLTECH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 87,
+        "fields": {
+            "name": "Educ Sts: Philo&Hist of Educ",
+            "short_name": "ESPHE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 88,
+        "fields": {
+            "name": "Educ Sts: Qualitative Research",
+            "short_name": "ESQUAL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 89,
+        "fields": {
+            "name": "Educ Sts: Qunt Rsch Eval&Msrmt",
+            "short_name": "ESQREM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 90,
+        "fields": {
+            "name": "Educ Sts: School Psychology",
+            "short_name": "ESSPSY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 91,
+        "fields": {
+            "name": "Educ Sts: Special Education",
+            "short_name": "ESSPED"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 92,
+        "fields": {
+            "name": "Educ Sts: Wkfrc Dvlpt & Educ",
+            "short_name": "ESWDE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 93,
+        "fields": {
+            "name": "Education and Human Ecology",
+            "short_name": "EHE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 94,
+        "fields": {
+            "name": "Education:Teaching & Learning",
+            "short_name": "EDUTL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 95,
+        "fields": {
+            "name": "Educational Studies",
+            "short_name": "EDUCST"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 96,
+        "fields": {
+            "name": "Electrical and Computer Eng",
+            "short_name": "ECE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 97,
+        "fields": {
+            "name": "Engineering",
+            "short_name": "ENGR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 98,
+        "fields": {
+            "name": "Engineering Education",
+            "short_name": "ENGREDU"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 99,
+        "fields": {
+            "name": "Engineering Technology",
+            "short_name": "ENGTECH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 100,
+        "fields": {
+            "name": "Engineering Technology (BS)",
+            "short_name": "ENGRTEC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 101,
+        "fields": {
+            "name": "English",
+            "short_name": "ENGLISH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 102,
+        "fields": {
+            "name": "Entomology",
+            "short_name": "ENTMLGY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 103,
+        "fields": {
+            "name": "Environment & Natural Resource",
+            "short_name": "ENR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 104,
+        "fields": {
+            "name": "Environmental Engineering",
+            "short_name": "ENVENG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 105,
+        "fields": {
+            "name": "Environmental Science",
+            "short_name": "ENVSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 106,
+        "fields": {
+            "name": "Evol, Ecology & Organismal Bio",
+            "short_name": "EEOB"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 107,
+        "fields": {
+            "name": "Exploration",
+            "short_name": "EXP"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 108,
+        "fields": {
+            "name": "Film Studies",
+            "short_name": "FILMSTD"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 109,
+        "fields": {
+            "name": "Food Science & Technology",
+            "short_name": "FDSCTE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 110,
+        "fields": {
+            "name": "Food, Agricul & Bio Engineer",
+            "short_name": "FABENG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 111,
+        "fields": {
+            "name": "Food, Agricul, & Enviro Sci",
+            "short_name": "FAES"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 112,
+        "fields": {
+            "name": "French",
+            "short_name": "FRENCH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 113,
+        "fields": {
+            "name": "French and Italian",
+            "short_name": "FRIT"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 114,
+        "fields": {
+            "name": "General Education",
+            "short_name": "GENED"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 115,
+        "fields": {
+            "name": "General Studies",
+            "short_name": "GENSTDS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 116,
+        "fields": {
+            "name": "General Studies: Biology",
+            "short_name": "GENBIOL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 117,
+        "fields": {
+            "name": "General Studies: Chemistry",
+            "short_name": "GENCHEM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 118,
+        "fields": {
+            "name": "General Studies: Communication",
+            "short_name": "GENCOMM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 119,
+        "fields": {
+            "name": "General Studies: Mathematics",
+            "short_name": "GENMATH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 120,
+        "fields": {
+            "name": "General Studies: Social Scienc",
+            "short_name": "GENSSC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 121,
+        "fields": {
+            "name": "Geodetic Sciences MPS",
+            "short_name": "GEOSCIM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 122,
+        "fields": {
+            "name": "Geography",
+            "short_name": "GEOG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 123,
+        "fields": {
+            "name": "German",
+            "short_name": "GERMAN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 124,
+        "fields": {
+            "name": "Graduate School",
+            "short_name": "GRADSCH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 125,
+        "fields": {
+            "name": "Greek",
+            "short_name": "GREEK"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 126,
+        "fields": {
+            "name": "Health Care Innovation",
+            "short_name": "HCINNOV"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 127,
+        "fields": {
+            "name": "Health Info Mgt & Systems",
+            "short_name": "HIMS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 128,
+        "fields": {
+            "name": "Health and Rehabilitation Sci",
+            "short_name": "HTHRHSC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 129,
+        "fields": {
+            "name": "Health and Wellness",
+            "short_name": "HW"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 130,
+        "fields": {
+            "name": "Health&Wellnss Innvtn Hlthcare",
+            "short_name": "HWIH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 131,
+        "fields": {
+            "name": "Hebrew",
+            "short_name": "HEBREW"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 132,
+        "fields": {
+            "name": "Hecc Cross-Registration",
+            "short_name": "HECCREG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 133,
+        "fields": {
+            "name": "Hindi",
+            "short_name": "HINDI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 134,
+        "fields": {
+            "name": "History",
+            "short_name": "HISTORY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 135,
+        "fields": {
+            "name": "History of Art",
+            "short_name": "HISTART"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 136,
+        "fields": {
+            "name": "Honors, University",
+            "short_name": "HONORS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 137,
+        "fields": {
+            "name": "Horticultural Technology",
+            "short_name": "HORTTEC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 138,
+        "fields": {
+            "name": "Horticulture and Crop Science",
+            "short_name": "HCS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 139,
+        "fields": {
+            "name": "Human Dev and Family Science",
+            "short_name": "HDFS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 140,
+        "fields": {
+            "name": "Human Nutrition",
+            "short_name": "HUMNNTR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 141,
+        "fields": {
+            "name": "Industrial and Sys Engineering",
+            "short_name": "ISE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 142,
+        "fields": {
+            "name": "Internal Medicine",
+            "short_name": "INTMED"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 143,
+        "fields": {
+            "name": "International Studies",
+            "short_name": "INTSTDS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 144,
+        "fields": {
+            "name": "Islamic Studies",
+            "short_name": "ISLAM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 145,
+        "fields": {
+            "name": "Italian",
+            "short_name": "ITALIAN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 146,
+        "fields": {
+            "name": "Japanese",
+            "short_name": "JAPANSE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 147,
+        "fields": {
+            "name": "Jewish Studies",
+            "short_name": "JEWSHST"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 148,
+        "fields": {
+            "name": "Kinesiology",
+            "short_name": "KINESIO"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 149,
+        "fields": {
+            "name": "Kinesiology: Health&Exercs Sci",
+            "short_name": "KNHES"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 150,
+        "fields": {
+            "name": "Kinesiology:Physical Education",
+            "short_name": "KNPE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 151,
+        "fields": {
+            "name": "Kinesiology:Sprt, Ftns&Hlth Pr",
+            "short_name": "KNSFHP"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 152,
+        "fields": {
+            "name": "Kinesiology:Spt Indsty Spt Mgt",
+            "short_name": "KNSISM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 153,
+        "fields": {
+            "name": "Knowlton",
+            "short_name": "KNOW"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 154,
+        "fields": {
+            "name": "Korean",
+            "short_name": "KOREAN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 155,
+        "fields": {
+            "name": "Landscape Architecture",
+            "short_name": "LARCH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 156,
+        "fields": {
+            "name": "Latin",
+            "short_name": "LATIN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 157,
+        "fields": {
+            "name": "Law",
+            "short_name": "LAW"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 158,
+        "fields": {
+            "name": "Linguistics",
+            "short_name": "LING"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 159,
+        "fields": {
+            "name": "Master of Business Admin",
+            "short_name": "MBA"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 160,
+        "fields": {
+            "name": "Master of Dietetics & Nutritio",
+            "short_name": "MDN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 161,
+        "fields": {
+            "name": "Materials Science and Engineer",
+            "short_name": "MATSCEN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 162,
+        "fields": {
+            "name": "Mathematics",
+            "short_name": "MATH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 163,
+        "fields": {
+            "name": "Meat Science",
+            "short_name": "MEATSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 164,
+        "fields": {
+            "name": "Mechanical Engineering",
+            "short_name": "MECHENG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 165,
+        "fields": {
+            "name": "Medical Dietetics",
+            "short_name": "MEDDIET"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 166,
+        "fields": {
+            "name": "Medical Laboratory Science",
+            "short_name": "MEDLBS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 167,
+        "fields": {
+            "name": "Medicine, College of",
+            "short_name": "MEDCOLL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 168,
+        "fields": {
+            "name": "Medieval & Renaissance Studies",
+            "short_name": "MEDREN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 169,
+        "fields": {
+            "name": "Microbial Infection & Immunity",
+            "short_name": "MEDMCIM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 170,
+        "fields": {
+            "name": "Microbiology",
+            "short_name": "MICRBIO"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 171,
+        "fields": {
+            "name": "Military Science",
+            "short_name": "MILSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 172,
+        "fields": {
+            "name": "Modern Greek",
+            "short_name": "MDRNGRK"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 173,
+        "fields": {
+            "name": "Molec, Cellular, Dvlpmtl Bio",
+            "short_name": "MCDBIO"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 174,
+        "fields": {
+            "name": "Molecular Genetics",
+            "short_name": "MOLGEN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 175,
+        "fields": {
+            "name": "Moving Image Production",
+            "short_name": "MVNGIMG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 176,
+        "fields": {
+            "name": "Music",
+            "short_name": "MUSIC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 177,
+        "fields": {
+            "name": "Naval Science",
+            "short_name": "NAVALSC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 178,
+        "fields": {
+            "name": "Near Eastrn Lang and Cultures",
+            "short_name": "NELC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 179,
+        "fields": {
+            "name": "Neurological Surgery",
+            "short_name": "NEURSGY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 180,
+        "fields": {
+            "name": "Neuroscience Department",
+            "short_name": "NEUROSC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 181,
+        "fields": {
+            "name": "Neuroscience Graduate Studies",
+            "short_name": "NEUROGS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 182,
+        "fields": {
+            "name": "Nuclear Engineering",
+            "short_name": "NUCLREN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 183,
+        "fields": {
+            "name": "Nursing",
+            "short_name": "NURSING"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 184,
+        "fields": {
+            "name": "Nursing Advancement",
+            "short_name": "NRSADVN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 185,
+        "fields": {
+            "name": "Nursing Practice",
+            "short_name": "NRSPRCT"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 186,
+        "fields": {
+            "name": "Occupational Therapy",
+            "short_name": "OCCTHER"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 187,
+        "fields": {
+            "name": "Ohio State Biochemistry Prg",
+            "short_name": "OSBP"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 188,
+        "fields": {
+            "name": "Optometry",
+            "short_name": "OPTOM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 189,
+        "fields": {
+            "name": "Otolaryngology",
+            "short_name": "OTOLARN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 190,
+        "fields": {
+            "name": "Pathology",
+            "short_name": "PATHOL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 191,
+        "fields": {
+            "name": "Pediatrics",
+            "short_name": "PEDS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 192,
+        "fields": {
+            "name": "Persian",
+            "short_name": "PERSIAN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 193,
+        "fields": {
+            "name": "Pharmacy",
+            "short_name": "PHR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 194,
+        "fields": {
+            "name": "Philosophy",
+            "short_name": "PHILOS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 195,
+        "fields": {
+            "name": "Physical Med & Rehabilitation",
+            "short_name": "PHYSMED"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 196,
+        "fields": {
+            "name": "Physical Therapy",
+            "short_name": "PHYSTHR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 197,
+        "fields": {
+            "name": "Physics",
+            "short_name": "PHYSICS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 198,
+        "fields": {
+            "name": "Physiology and Cell Biology",
+            "short_name": "PHYSIO"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 199,
+        "fields": {
+            "name": "Plant Pathology",
+            "short_name": "PLNTPTH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 200,
+        "fields": {
+            "name": "Polish",
+            "short_name": "POLISH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 201,
+        "fields": {
+            "name": "Political Science",
+            "short_name": "POLITSC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 202,
+        "fields": {
+            "name": "Portuguese",
+            "short_name": "PORTGSE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 203,
+        "fields": {
+            "name": "Psychiatry and Behavioral Heal",
+            "short_name": "PSYBHLH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 204,
+        "fields": {
+            "name": "Psychology",
+            "short_name": "PSYCH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 205,
+        "fields": {
+            "name": "Pub Hlth: Biostatistics",
+            "short_name": "PUBHBIO"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 206,
+        "fields": {
+            "name": "Pub Hlth: Envirmtl Hlth Scis",
+            "short_name": "PUBHEHS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 207,
+        "fields": {
+            "name": "Pub Hlth: Epidemiology",
+            "short_name": "PUBHEPI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 208,
+        "fields": {
+            "name": "Pub Hlth: Hlth Bhvr&Hlth Prom",
+            "short_name": "PUBHHBP"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 209,
+        "fields": {
+            "name": "Pub Hlth: Hlth Srvcs Mgt&Plcy",
+            "short_name": "PUBHHMP"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 210,
+        "fields": {
+            "name": "Public Affairs, John Glenn Col",
+            "short_name": "PUBAFRS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 211,
+        "fields": {
+            "name": "Public Health",
+            "short_name": "PUBHLTH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 212,
+        "fields": {
+            "name": "Quechua",
+            "short_name": "QUECHUA"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 213,
+        "fields": {
+            "name": "ROOM",
+            "short_name": "ROOM"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 214,
+        "fields": {
+            "name": "Radiation Oncology",
+            "short_name": "RADONC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 215,
+        "fields": {
+            "name": "Radiologic Sciences & Therapy",
+            "short_name": "RADSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 216,
+        "fields": {
+            "name": "Radiology",
+            "short_name": "RADIOLG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 217,
+        "fields": {
+            "name": "Religious Studies",
+            "short_name": "RELSTDS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 218,
+        "fields": {
+            "name": "Respiratory Therapy",
+            "short_name": "RESPTHR"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 219,
+        "fields": {
+            "name": "Romance Linguistics",
+            "short_name": "ROMLING"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 220,
+        "fields": {
+            "name": "Romanian",
+            "short_name": "ROMANIA"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 221,
+        "fields": {
+            "name": "Rural Sociology",
+            "short_name": "RURLSOC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 222,
+        "fields": {
+            "name": "Russian",
+            "short_name": "RUSSIAN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 223,
+        "fields": {
+            "name": "Sanskrit",
+            "short_name": "SANSKRT"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 224,
+        "fields": {
+            "name": "Scandinavian",
+            "short_name": "SCANDVN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 225,
+        "fields": {
+            "name": "Slavic Languages & Literatures",
+            "short_name": "SLAVIC"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 226,
+        "fields": {
+            "name": "Social Work",
+            "short_name": "SOCWORK"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 227,
+        "fields": {
+            "name": "Sociology",
+            "short_name": "SOCIOL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 228,
+        "fields": {
+            "name": "Somali",
+            "short_name": "SOMALI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 229,
+        "fields": {
+            "name": "South Asia Studies",
+            "short_name": "SASIA"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 230,
+        "fields": {
+            "name": "Spanish",
+            "short_name": "SPANISH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 231,
+        "fields": {
+            "name": "Speech and Hearing Science",
+            "short_name": "SPHHRNG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 232,
+        "fields": {
+            "name": "Statistics",
+            "short_name": "STAT"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 233,
+        "fields": {
+            "name": "Surgery",
+            "short_name": "SURGERY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 234,
+        "fields": {
+            "name": "Swahili",
+            "short_name": "SWAHILI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 235,
+        "fields": {
+            "name": "Swedish",
+            "short_name": "SWEDISH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 236,
+        "fields": {
+            "name": "Technical Physics",
+            "short_name": "TECPHYS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 237,
+        "fields": {
+            "name": "Theatre",
+            "short_name": "THEATRE"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 238,
+        "fields": {
+            "name": "Translational Data Analytics",
+            "short_name": "GRADTDA"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 239,
+        "fields": {
+            "name": "Turkish",
+            "short_name": "TURKISH"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 240,
+        "fields": {
+            "name": "Urdu",
+            "short_name": "URDU"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 241,
+        "fields": {
+            "name": "Urology",
+            "short_name": "UROLOGY"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 242,
+        "fields": {
+            "name": "Uzbek",
+            "short_name": "UZBEK"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 243,
+        "fields": {
+            "name": "Veterinary Biosciences",
+            "short_name": "VETBIOS"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 244,
+        "fields": {
+            "name": "Veterinary Clinical Sciences",
+            "short_name": "VETCLIN"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 245,
+        "fields": {
+            "name": "Veterinary Medicine",
+            "short_name": "VMCOLL"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 246,
+        "fields": {
+            "name": "Veterinary Preventive Medicine",
+            "short_name": "VETPREV"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 247,
+        "fields": {
+            "name": "Vision Science",
+            "short_name": "VISSCI"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 248,
+        "fields": {
+            "name": "Welding Engineering",
+            "short_name": "WELDENG"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 249,
+        "fields": {
+            "name": "Women's, Gender&Sexuality Sts",
+            "short_name": "WGSST"
+        }
+    },
+    {
+        "model": "search.department",
+        "pk": 250,
+        "fields": {
+            "name": "Yiddish",
+            "short_name": "YIDDISH"
+        }
+    }
+]
