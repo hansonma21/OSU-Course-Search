@@ -124,5 +124,18 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+Q_CLUSTER = {
+    'name': 'django_q_osu_course_search',
+    'workers': 8,
+    'recycle': 500,
+    'timeout': 60,
+    'compress': True,
+    'save_limit': 250,
+    'queue_limit': 500,
+    'cpu_affinity': 1,
+    'label': 'Django Q',
+    'redis': 'redis://:p5d61132f3f0b874240b24fb2c26cc9f7a502acf62fd9ea2d0794cf990a3820a6@ec2-52-22-202-137.compute-1.amazonaws.com:10149'
+}
+
 import django_heroku
 django_heroku.settings(locals())
