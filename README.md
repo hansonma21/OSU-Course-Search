@@ -1,5 +1,5 @@
 # OSU-Course-Search
-Django Project, deployed on Heroku, that allows OSU students to search for their classes and find out who their instructors might be (that would otherwise be hidden)
+Django Project, deployed on Heroku, that allows OSU students to search for their classes and find out who their instructors might be (that would otherwise be hidden). A very, very limited build can be viewed on osucoursesearch.herokuapp.com
 
 # Currently in a VERY ALPHA build
 At the moment, there is no seed data, but you can run
