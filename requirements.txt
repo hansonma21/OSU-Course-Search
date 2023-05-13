@@ -10,6 +10,7 @@ certifi==2023.5.7
 cffi==1.15.1
 charset-normalizer==3.1.0
 colorama==0.4.6
+DateTime==5.1
 dj-database-url==2.0.0
 Django==4.2.1
 django-heroku==0.3.1
@@ -25,6 +26,7 @@ psycopg2==2.9.6
 pycparser==2.21
 PySocks==1.7.1
 python-dateutil==2.8.2
+pytz==2023.3
 redis==3.5.3
 requests==2.30.0
 selenium==4.9.1
@@ -42,3 +44,4 @@ urllib3==2.0.2
 wcwidth==0.2.6
 whitenoise==6.4.0
 wsproto==1.2.0
+zope.interface==6.0
