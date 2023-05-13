@@ -18,7 +18,7 @@ class Term(models.Model):
 
 
 class DepartmentManager(models.Manager):
-    """A manager for Department objects; used to filter by department name"""
+    """A manager for Department objects; used to filter by department short_name"""
     def get_by_natural_key(self, short_name):
         return self.get(short_name=short_name)
 
@@ -41,12 +41,20 @@ class Department(models.Model):
         return self.short_name
 
 
+class CourseManager(models.Manager):
+    """A manager for Course objects; used to filter by department short_name and course number"""
+    def get_by_natural_key(self, department_short_name, number):
+        return self.get(department__short_name=department_short_name, number=number)
+
 class Course(models.Model):
     """An individual course entity; belongs to a department"""
     name = models.TextField() # e.g. Systems I: Introduction...
     department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
     number = models.CharField(max_length=20) # e.g. 2421
     description = models.TextField() # e.g. Introduction to computer architecture at machine...
+
+    # allows access to Course objects by department short_name and course number
+    objects = CourseManager()
 
     # ensures that the department and number are unique
     class Meta:
