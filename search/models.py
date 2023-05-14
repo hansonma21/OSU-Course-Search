@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Term(models.Model):
-    """An individual term/semester"""
+    """An individual term/semester; has Courses"""
     osu_id = models.IntegerField() # unique OSU identifier for terms (e.g. 1238)
     name = models.CharField(max_length=4) # e.g. AU23
 
@@ -47,11 +47,13 @@ class CourseManager(models.Manager):
         return self.get(department__short_name=department_short_name, number=number)
 
 class Course(models.Model):
-    """An individual course entity; belongs to a department"""
+    """An individual course entity; belongs to a department; belongs to many terms"""
     name = models.TextField() # e.g. Systems I: Introduction...
     department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
     number = models.CharField(max_length=20) # e.g. 2421
-    description = models.TextField() # e.g. Introduction to computer architecture at machine...
+    description = models.TextField(null=True) # e.g. Introduction to computer architecture at machine...
+
+    terms = models.ManyToManyField(Term) # many to many relationship with Term
 
     # allows access to Course objects by department short_name and course number
     objects = CourseManager()
@@ -66,19 +68,19 @@ class Course(models.Model):
         return '{} {}'.format(self.department.short_name, self.number)
 
 
-class Course_Term(models.Model):
-    """Representing the many to many relationship between a term/semester and a course, has Course_Sections (individual sections)"""
-    term = models.ForeignKey(Term, on_delete=models.CASCADE) # referencing a Term
-    course = models.ForeignKey(Course, on_delete=models.CASCADE) # referencing a Course
+# class Course_Term(models.Model):
+#     """Representing the many to many relationship between a term/semester and a course, has Course_Sections (individual sections)"""
+#     term = models.ForeignKey(Term, on_delete=models.CASCADE) # referencing a Term
+#     course = models.ForeignKey(Course, on_delete=models.CASCADE) # referencing a Course
 
-    # ensures that the term and course are unique
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['term', 'course'], name='unique_course_term')
-        ]
+#     # ensures that the term and course are unique
+#     class Meta:
+#         constraints = [
+#             models.UniqueConstraint(fields=['term', 'course'], name='unique_course_term')
+#         ]
 
-    def __str__(self):
-        return '{}, {}'.format(self.course.__str__(), self.term.name)
+#     def __str__(self):
+#         return '{}, {}'.format(self.course.__str__(), self.term.name)
 
 
 class Instructor(models.Model):
@@ -102,7 +104,7 @@ class Instructor(models.Model):
 
 
 class Course_Section(models.Model):
-    """An individual section entity; belongs to a Course_Term (a Course and a Term), can have many instructors"""
+    """An individual section entity; belongs to Course and a Term, can have many instructors"""
     course = models.ForeignKey(Course, on_delete=models.CASCADE) # referencing a Course
     term = models.ForeignKey(Term, on_delete=models.CASCADE) # referencing a Term
 

@@ -26,6 +26,13 @@ class TermAdmin(admin.ModelAdmin):
         ("Term Information", {"fields": ["name"]})
     ]
 
+class CourseAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ("Department", {"fields": ["department"]}),
+        ("Course Number", {"fields": ["number"]}),
+        ("Course Name", {"fields": ["name"]})
+    ]
+
 
 class InstructorAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -40,13 +47,14 @@ class Course_SectionAdmin(admin.ModelAdmin):
     ]
 
 
-class BruhAdmin(q_admin.ScheduleAdmin):
+class ScheduleAdmin(q_admin.ScheduleAdmin):
     fieldsets = [
 
     ]
 
 
 admin.site.register(Term, TermAdmin)
+admin.site.register(Course, CourseAdmin)
 admin.site.register(Department, DepartmentAdmin)
 admin.site.register(Instructor, InstructorAdmin)
 admin.site.register(Course_Section, Course_SectionAdmin)

@@ -1,4 +1,5 @@
 from datetime import datetime
+import traceback
 from bs4 import BeautifulSoup
 from .models import *
 from selenium import webdriver
@@ -25,6 +26,7 @@ def update_sections(term, department):
     """Updates the sections in the database"""
 
     def click_Add_Srch_Criteria(driver):
+        """Clicks the 'Additional Search Criteria' button on the page to reveal additional options (e.g. lookup by last name)"""
         more_buttons = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, "//img[@alt='Additional Search Criteria']")))
 
@@ -44,7 +46,7 @@ def update_sections(term, department):
         # toWaitOn = driver.find_element(By.ID, "SSR_CLSRCH_WRK_LAST_NAME$8")
 
         select = Select(driver.find_element(By.NAME, "CLASS_SRCH_WRK2_STRM$35$"))
-        select.select_by_value(term)  # change this value for different semesters
+        select.select_by_value(str(term))  # change this value for different semesters
 
         webDriverWait.until(EC.staleness_of(toWaitOn))
         click_Add_Srch_Criteria(driver)
@@ -82,9 +84,9 @@ def update_sections(term, department):
                 (By.NAME, "SSR_CLSRCH_WRK_SSR_OPEN_ONLY$4"))).click()
         except ElementClickInterceptedException:
             if numFails == 0:
-                # print("Element is not clickable... Trying again")
-                submit_form(driver,
-                            url,
+                print("Element is not clickable... Trying again")
+                submit_form(driver=driver,
+                            url=url,
                             term=term,
                             department=department,
                             last_name=last_name,
@@ -113,13 +115,19 @@ def update_sections(term, department):
         # test.find_element(By.XPATH, "//option[value=UGRD").get_property("selected")
         # print(successOrFail.get_attribute("id"))
         if successOrFail.get_attribute("id") == "DERIVED_CLSMSG_ERROR_TEXT":
-            # print(lastName + ": " + successOrFail.text)
+            print(last_name + ": " + successOrFail.text)
             return None
         else:
-            # print(lastName + ": Search Successful")
+            print(last_name + ": Search Successful")
             return driver.page_source
         
-    def parse_form(soup: BeautifulSoup):
+    def parse_form(soup: BeautifulSoup, queryset_of_instructors):
+        """Parses the html of the form and returns a list of courses"""
+
+        print("Parsing form")
+        with open("test.html", "w") as f:
+            f.write(soup.prettify())
+
         availabilityDict = {
             "/cs/csosuct/cache85909/PS_CS_STATUS_OPEN_ICN_1.gif": "Available",
             "/cs/csosuct/cache85909/PS_CS_STATUS_WAITLIST_ICN_1.gif": "Waitlist",
@@ -127,19 +135,23 @@ def update_sections(term, department):
         }
 
         coursesRows = soup.find("table", {"id": "ACE_$ICField$4$$0"})
-        coursesRows = coursesRows.find("tbody").find_all("tr") # type: ignore
-        
+        coursesRows = coursesRows.find("tbody", recursive=False).find_all("tr", recursive=False) # type: ignore
+        # print(len(coursesRows))
         for row in coursesRows:
-            if len(row.text):
+            # this find keeps making the program crash
+            fullCourseTitleElement = row.find("td", {"class": "PAGROUPBOXLABELLEVEL1"})
+            if fullCourseTitleElement is None:
                 continue
 
-            fullCourseTitle = row.find("td", {"class": "PAGROUPBOXLABELLEVEL1"}).text
+            fullCourseTitle = fullCourseTitleElement.get_text().strip()
+            # print(fullCourseTitle)
             splitTitle = fullCourseTitle.split("-")
             deptAndNumber = splitTitle[0].strip()
             dept, number = deptAndNumber.split(" ")
 
-            sectionRows = row.find_all("table", {"id": lambda x: x and x.startswith("ACE_SSR_CLSRSLT_WRK_GROUPBOX3")})
+            sectionRows = row.find_all(id=lambda x: x and x.startswith("ACE_SSR_CLSRSLT_WRK_GROUPBOX3"))
 
+            print(len(sectionRows))
             for sectionRow in sectionRows:
                 rowData = sectionRow.find_all("td", {"class": "PSLEVEL3GRIDODDROW"})
                 section_id = rowData[0].text
@@ -148,14 +160,26 @@ def update_sections(term, department):
                 room = rowData[3].text
                 meeting_dates = rowData[5].text
                 start_date, end_date = meeting_dates.split(" - ")
-                start_date= datetime.strptime(start_date, "%m/%d/%Y").date()
-                end_date = datetime.strptime(end_date, "%m/%d/%Y").date()
+                start_date = datetime.strptime(start_date.strip(), "%m/%d/%Y").date()
+                end_date = datetime.strptime(end_date.strip(), "%m/%d/%Y").date()
                 availabilityElement = rowData[6].find("img")
                 availability = availabilityDict.get(availabilityElement.get_attribute_list("src")[0], "")
 
-                course_section, created = Course_Section.objects.get_or_create(section_id=section_id, term=term)
+                try:
+                    course_section = Course_Section.objects.get(section_id=int(section_id), term = Term.objects.get(osu_id=term))
+                except Course_Section.DoesNotExist:
+                    course_section = Course_Section(section_id=int(section_id), term=Term.objects.get(osu_id=term))
                 
-                course_section.course = Course.objects.get(department__short_name=dept, number=number)
+                try:
+                    course_section.course = Course.objects.get(department__short_name=dept, number=number)
+                    # check if the course is already in the term
+                    if not course_section.course.terms.filter(osu_id=term).exists():
+                        course_section.course.terms.add(Term.objects.get(osu_id=term))
+                except Course.DoesNotExist:
+                    newCourse = Course.objects.create(name=splitTitle[1], department=Department.objects.get(short_name=dept), number=number)
+                    newCourse.terms.add(Term.objects.get(osu_id=term))
+                    course_section.course = newCourse
+                
                 course_section.section_info = section_info
                 course_section.days_and_times = days_and_times
                 course_section.room = room
@@ -165,32 +189,45 @@ def update_sections(term, department):
 
                 course_section.save()
 
+                course_section.instructors.add(*queryset_of_instructors)
+                # print(course_section)
 
-    def FILLER_METHOD_NAME(driver, url, term, department, nameToStart):
+
+    def search_all_instructors_in_department(driver, url, term, department, nameToStart=None):
+        # get all the last names from the instructors table given a department (in alphabetical order)
         instructors = Instructor.objects.filter(department__short_name=department)
-
         tuples_of_last_names = list(instructors.values_list('last_name').distinct().order_by('last_name'))
-        # get all the last names from the instructors table given a department
         
 
         for last_name_tuple in tuples_of_last_names:
             last_name = last_name_tuple[0]
+            list_of_instructors = instructors.filter(last_name__iexact=last_name)
 
-            if nameToStart != '' and last_name.lower() < nameToStart.lower():
+            if nameToStart is not None and last_name.lower() < nameToStart.lower():
                 continue
 
             try:
                 submittedForm = submit_form(driver, url, term, department, last_name, numFails=0)
                 if submittedForm is not None:
                     soup = BeautifulSoup(submittedForm, 'html.parser')
-                    parse_form(soup)
+                    parse_form(soup, list_of_instructors)
                     
                     
             except TimeoutException:
                 return last_name
             except ElementClickInterceptedException:
                 return last_name
-
+        
+        return None
+            
+    
+    # if term is not in the database this scheduled task fails
+    if not Term.objects.filter(osu_id=term).exists():
+        raise Exception("Term does not exist in database")
+    
+    # if the department is not in the database this scheduled task fails
+    if not Department.objects.filter(short_name=department).exists():
+        raise Exception("Department does not exist in database")
 
     # selenium setup
     options = Options()
@@ -206,11 +243,14 @@ def update_sections(term, department):
     url = "https://courses.osu.edu/psc/csosuct/EMPLOYEE/PUB/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?PortalActualURL=https%3a%2f%2fcourses.osu.edu%2fpsc%2fcsosuct%2fEMPLOYEE%2fPUB%2fc%2fCOMMUNITY_ACCESS.CLASS_SEARCH.GBL&PortalRegistryName=EMPLOYEE&PortalServletURI=https%3a%2f%2fcourses.osu.edu%2fpsp%2fcsosuct%2f&PortalURI=https%3a%2f%2fcourses.osu.edu%2fpsc%2fcsosuct%2f&PortalHostNode=CAMP&NoCrumbs=yes&PortalKeyStruct=yes"
 
     try:
-        failed_name = FILLER_METHOD_NAME(driver, url, term, department, '')
+        failed_name = search_all_instructors_in_department(driver=driver, url=url, term=term, department=department, nameToStart=None)
         while failed_name is not None:
-            failed_name = FILLER_METHOD_NAME(driver, url, term, department, failed_name)
+            failed_name = search_all_instructors_in_department(driver, url, term, department, failed_name)
+        
+        return True
     except Exception as E:
-        print(E)
+        print(traceback.format_exc())
+        return False
     finally:
         driver.close()
 
