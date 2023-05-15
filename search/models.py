@@ -100,7 +100,7 @@ class Instructor(models.Model):
         ordering=('last_name', 'first_name')
 
     def __str__(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+        return '{} {}, {}'.format(self.first_name, self.last_name, self.department.short_name)
 
 
 class Course_Section(models.Model):
@@ -126,5 +126,6 @@ class Course_Section(models.Model):
 
     def __str__(self):
         course_and_term_str = '{}, {}'.format(self.course.__str__(), self.term.name)
-        return '{}, {}'.format(course_and_term_str, self.section_id)
+        instructors_str = ['{} {}'.format(instructor.first_name, instructor.last_name) for instructor in self.instructors.all()]
+        return '{}, {}; Instructors: {}'.format(course_and_term_str, self.section_id, instructors_str)
 

@@ -24,8 +24,7 @@ class SearchResultsView(generic.ListView):
     def get_queryset(self):
         form = self.form_class(self.request.GET)
         if form.is_valid():
-            return Course_Section.objects.filter(
-                                        course_term__course__number__iexact=form.cleaned_data['number'],
+            return Course_Section.objects.filter(course__number__iexact=form.cleaned_data['number'],
                                         instructors__last_name__iexact=form.cleaned_data['instructor_last_name']
                                         )
             # return Course_Section.objects.filter(course_term__term__name__iexact=form.cleaned_data['term'],

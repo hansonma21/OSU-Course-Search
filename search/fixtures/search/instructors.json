@@ -96776,5 +96776,16 @@
                 "YIDDISH"
             ]
         }
+    },
+    {
+        "model": "search.instructor",
+        "pk": 8799,
+        "fields":{
+            "first_name": "Jaime",
+            "last_name": "Kelley",
+            "department": [
+                "CSE"
+            ]
+        }
     }
 ]

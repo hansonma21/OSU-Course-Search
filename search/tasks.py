@@ -145,23 +145,27 @@ def update_sections(term, department):
 
             fullCourseTitle = fullCourseTitleElement.get_text().strip()
             # print(fullCourseTitle)
-            splitTitle = fullCourseTitle.split("-")
+            splitTitle = fullCourseTitle.split("-", maxsplit=1)
             deptAndNumber = splitTitle[0].strip()
-            dept, number = deptAndNumber.split(" ")
+            dept, number = deptAndNumber.split(" ", maxsplit=1)
 
             sectionRows = row.find_all(id=lambda x: x and x.startswith("ACE_SSR_CLSRSLT_WRK_GROUPBOX3"))
 
-            print(len(sectionRows))
+            # print(len(sectionRows))
             for sectionRow in sectionRows:
                 rowData = sectionRow.find_all("td", {"class": "PSLEVEL3GRIDODDROW"})
-                section_id = rowData[0].text
-                section_info = rowData[1].text.replace("\n", ",")
-                days_and_times = rowData[2].text
-                room = rowData[3].text
-                meeting_dates = rowData[5].text
-                start_date, end_date = meeting_dates.split(" - ")
-                start_date = datetime.strptime(start_date.strip(), "%m/%d/%Y").date()
-                end_date = datetime.strptime(end_date.strip(), "%m/%d/%Y").date()
+                section_id = rowData[0].text.strip()
+                section_info = rowData[1].text.strip().replace("\n", ",")
+                days_and_times = rowData[2].text.strip()
+                room = rowData[3].text.strip()
+                meeting_dates = rowData[5].text.strip().split("\n")
+                meeting_dates = meeting_dates[0].strip()
+                # only get the first two for start and end date
+                dates = meeting_dates.split(" - ")
+                start_date = dates[0].strip()
+                end_date = dates[1].strip()
+                start_date = datetime.strptime(start_date, "%m/%d/%Y").date()
+                end_date = datetime.strptime(end_date, "%m/%d/%Y").date()
                 availabilityElement = rowData[6].find("img")
                 availability = availabilityDict.get(availabilityElement.get_attribute_list("src")[0], "")
 
@@ -185,7 +189,7 @@ def update_sections(term, department):
                 course_section.room = room
                 course_section.start_date = start_date
                 course_section.end_date = end_date
-                availability = availability
+                course_section.availability = availability
 
                 course_section.save()
 

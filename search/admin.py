@@ -40,11 +40,14 @@ class InstructorAdmin(admin.ModelAdmin):
         ("Name", {"fields": ["first_name", "last_name"]})
     ]
 
+    search_fields = ["department__short_name", "first_name", "last_name"]
+
 
 class Course_SectionAdmin(admin.ModelAdmin):
     fieldsets = [
 
     ]
+    search_fields = ["course__department__short_name", "course__number", "term__name", "instructors__last_name"]
 
 
 class ScheduleAdmin(q_admin.ScheduleAdmin):
