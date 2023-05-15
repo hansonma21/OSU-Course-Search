@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 import traceback
 from bs4 import BeautifulSoup
 from .models import *
@@ -234,13 +235,15 @@ def update_sections(term, department):
         raise Exception("Department does not exist in database")
 
     # selenium setup
-    options = Options()
+    options = webdriver.ChromeOptions()
+    options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") # type: ignore
     options.add_argument('--no-sandbox')
     options.add_argument('--ignore-certificate-errors')
+    options.add_argument("--disable-dev-shm-usage")
     options.add_argument('--incognito')
     options.add_argument('--headless')
 
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options) # type: ignore
     # webDriverWait = WebDriverWait(driver, 20)
 
     # url to scrape course data from (including hidden professors attached to them)
