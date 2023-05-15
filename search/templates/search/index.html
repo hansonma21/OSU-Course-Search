@@ -1,7 +1,32 @@
 <h1>OSU Course Search</h1>
 
-<form action="{% url 'search_results' %}" method="get">
+<form method="get">
     {% csrf_token %}
-    {{ form }}
+    {{ myFilter.form.as_p }}
     <input type="submit" value="Submit">
 </form>
+
+<table>
+    {% for course_section in course_sections %}
+        <th>Section ID</th>
+        <th>Section Info</th>
+        <th>Days and Times</th>
+        <th>Room</th>
+        <th>Instructor(s)</th>
+        <th>Meeting Dates</th>
+        <th>Availability</th>
+        <tr>
+            <td>{{ course_section.section_id }}</td>
+            <td>{{ course_section.section_info }}</td>
+            <td>{{ course_section.days_and_times }}</td>
+            <td>{{ course_section.room }}</td>
+            <td>
+                {% for instructor in course_section.instructors.all %}
+                    {{ instructor.first_name }} {{ instructor.last_name }},
+                {% endfor %}
+            </td>
+            <td>{{ course_section.start_date }} - {{ course_section.end_date }}</td>
+            <td>{{ course_section.availability }}</td>
+        </tr>
+    {% endfor %}
+</table>

@@ -124,9 +124,9 @@ def update_sections(term, department):
     def parse_form(soup: BeautifulSoup, queryset_of_instructors):
         """Parses the html of the form and returns a list of courses"""
 
-        print("Parsing form")
-        with open("test.html", "w") as f:
-            f.write(soup.prettify())
+        # print("Parsing form")
+        # with open("test.html", "w") as f:
+        #     f.write(soup.prettify())
 
         availabilityDict = {
             "/cs/csosuct/cache85909/PS_CS_STATUS_OPEN_ICN_1.gif": "Available",
