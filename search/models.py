@@ -126,6 +126,6 @@ class Course_Section(models.Model):
 
     def __str__(self):
         course_and_term_str = '{}, {}'.format(self.course.__str__(), self.term.name)
-        instructors_str = ['{} {}'.format(instructor.first_name, instructor.last_name) for instructor in self.instructors.all()]
+        instructors_str = ['{} {}'.format(instructor.first_name, instructor.last_name) for instructor in self.instructors.all().iterator()]
         return '{}, {}; Instructors: {}'.format(course_and_term_str, self.section_id, instructors_str)
 

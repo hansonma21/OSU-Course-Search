@@ -194,6 +194,7 @@ def update_sections(term, department):
 
                 course_section.save()
 
+                course_section.instructors.clear()
                 course_section.instructors.add(*queryset_of_instructors)
                 # print(course_section)
 
@@ -257,8 +258,11 @@ def update_sections(term, department):
         print(traceback.format_exc())
         return False
     finally:
-        driver.close()
+        driver.quit()
 
+def update_all_sections(term):
+    for dept in Department.objects.all().iterator():
+        update_sections(term, dept.short_name)
 
 def update_instructors():
     """Updates the instructors in the database"""

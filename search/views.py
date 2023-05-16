@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 from .forms import SearchForm
-from .models import Course_Section
+from .models import Course, Course_Section
 from .filters import Course_SectionFilter
 
 # Create your views here.
@@ -46,16 +46,24 @@ def index(request):
         # if the user has submitted the form, create a filter instance and populate it with data from the request
         myFilter = Course_SectionFilter(request.POST)
         course_sections = None
+        courses = None
+        course_dict = None
 
         # check if the filter is valid, if so, get the queryset and pass it to the template
         if myFilter.is_valid():
-            print("valid")
             course_sections = myFilter.qs
+            
+            course_id_list = myFilter.qs.values_list('course').distinct()
+            courses = Course.objects.filter(id__in=course_id_list).order_by('department__short_name', 'number')
+
+            course_dict = {}
+            for course in courses:
+                course_dict[course] = course_sections.filter(course=course)
         
-        return render(request, "search/index.html", context={"course_sections": course_sections, "myFilter": myFilter})
+        return render(request, "search/index.html", context={"course_dict": course_dict, "course_sections": course_sections, "courses": courses, "myFilter": myFilter})
     else:
         # if the user has not submitted the form, create an empty filter instance
-        myFilter = Course_SectionFilter(request.GET, queryset=Course_Section.objects.all())
+        myFilter = Course_SectionFilter(request.GET)
         return render(request, "search/index.html", context={"myFilter": myFilter})
 
 # def search(request):
