@@ -45,22 +45,26 @@ def index(request):
     if request.method == "POST":
         # if the user has submitted the form, create a filter instance and populate it with data from the request
         myFilter = Course_SectionFilter(request.POST)
-        course_sections = None
-        courses = None
         course_dict = None
+        error_message = None
 
         # check if the filter is valid, if so, get the queryset and pass it to the template
         if myFilter.is_valid():
             course_sections = myFilter.qs
-            
-            course_id_list = myFilter.qs.values_list('course').distinct()
-            courses = Course.objects.filter(id__in=course_id_list).order_by('department__short_name', 'number')
 
-            course_dict = {}
-            for course in courses:
-                course_dict[course] = course_sections.filter(course=course)
+            if course_sections.exists():
+                course_id_list = course_sections.values_list('course').distinct()
+                courses = Course.objects.filter(id__in=course_id_list).order_by('department__short_name', 'number').iterator()
+
+                course_dict = {}
+                for course in courses:
+                    course_dict[course] = course_sections.filter(course=course)
+            else:
+                error_message = "No results found. Please try again."
+        else:
+            error_message = "Invalid search parameters. Term is required; Course Subject and Number OR Instructor Name is required."
         
-        return render(request, "search/index.html", context={"course_dict": course_dict, "course_sections": course_sections, "courses": courses, "myFilter": myFilter})
+        return render(request, "search/index.html", context={"course_dict": course_dict, "myFilter": myFilter, "error_message": error_message})
     else:
         # if the user has not submitted the form, create an empty filter instance
         myFilter = Course_SectionFilter(request.GET)
