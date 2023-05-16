@@ -1,0 +1,4 @@
+release: python manage.py migrate
+web: python manage.py runserver 0.0.0.0:8000
+worker: python manage.py qcluster
+log: powershell -Command "Get-Content log\development.log -Wait"
