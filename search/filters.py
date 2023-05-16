@@ -4,6 +4,7 @@ from .models import *
 
 class Course_SectionFilter(django_filters.FilterSet):
     """Filter for Course_Section model, will allow users to filter by Term, Course, and Instructor"""
+    term = django_filters.ModelChoiceFilter(field_name='term__name', queryset=Term.objects.all(), label='Term') # term is the term (e.g. Spring 2021) - ModelChoiceField
     subject = django_filters.AllValuesFilter(field_name='course__department__short_name', label='Subject') # subject is the department (e.g. CSE) - ChoiceField
     number = django_filters.CharFilter(field_name='course__number', method='filter_by_number') # number is the course number (e.g. 2421) - CharField
     instructor = django_filters.CharFilter(field_name='instructors', method='filter_by_instructor', label='Instructor') # instructor is the instructor's name- CharField
@@ -11,6 +12,23 @@ class Course_SectionFilter(django_filters.FilterSet):
     class Meta:
         model = Course_Section
         fields = ['term'] # auto term filter
+
+    # def __init__(self, *args, **kwargs):
+    #     super(Course_SectionFilter, self).__init__(*args, **kwargs)
+    #     # at startup user doen't push Submit button, and QueryDict (in data) is empty
+    #     if self.data == {}:
+    #         self.queryset = self.queryset.none()
+    
+    def is_valid(self):
+        """Override is_valid to check if term is present and either course or instructor is present"""
+
+        subject_search = self.data.get('subject', '')
+        number_search = self.data.get('number', '')
+
+        is_term_present = self.data.get('term', '') != ''
+        is_course_search = subject_search != '' and number_search != ''
+        is_instructor_search = self.data.get('instructor', None) != ''
+        return is_term_present and (is_course_search or is_instructor_search)
         
     # custom filter for course number that filters by exact match or prefix match (e.g. 2421 or 24)
     def filter_by_number(self, queryset, name, value):

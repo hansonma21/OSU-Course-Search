@@ -1,11 +1,12 @@
 <h1>OSU Course Search</h1>
 
-<form method="get">
+<form action="" method="post">
     {% csrf_token %}
-    {{ myFilter.form.as_p }}
+    {{ myFilter.form.as_table }}
     <input type="submit" value="Submit">
 </form>
 
+{% if course_sections %}
 <table>
     {% for course_section in course_sections %}
         <th>Section ID</th>
@@ -30,3 +31,4 @@
         </tr>
     {% endfor %}
 </table>
+{% endif %}

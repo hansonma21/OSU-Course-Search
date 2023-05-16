@@ -40,9 +40,23 @@ from .filters import Course_SectionFilter
 #         return myFilter.qs
 
 def index(request):
-    myFilter = Course_SectionFilter(request.GET, queryset=Course_Section.objects.all())
-    course_sections = myFilter.qs
-    return render(request, "search/index.html", context={"course_sections": course_sections, "myFilter": myFilter})
+    """View for index page, will display search form and search results"""
+
+    if request.method == "POST":
+        # if the user has submitted the form, create a filter instance and populate it with data from the request
+        myFilter = Course_SectionFilter(request.POST)
+        course_sections = None
+
+        # check if the filter is valid, if so, get the queryset and pass it to the template
+        if myFilter.is_valid():
+            print("valid")
+            course_sections = myFilter.qs
+        
+        return render(request, "search/index.html", context={"course_sections": course_sections, "myFilter": myFilter})
+    else:
+        # if the user has not submitted the form, create an empty filter instance
+        myFilter = Course_SectionFilter(request.GET, queryset=Course_Section.objects.all())
+        return render(request, "search/index.html", context={"myFilter": myFilter})
 
 # def search(request):
 #     if request.method == "POST":
