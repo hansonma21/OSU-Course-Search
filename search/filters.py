@@ -37,5 +37,5 @@ class Course_SectionFilter(django_filters.FilterSet):
     # custom filter for instructor that filters by first name or last name (e.g. Rob LaTour or Rob or LaTour or Rob L, etc.)
     def filter_by_instructor(self, queryset, name, value):
         for term in value.split():
-            queryset = queryset.filter( Q(instructors__first_name__icontains = term) | Q(instructors__last_name__icontains = term))
+            queryset = queryset.filter(Q(instructors__first_name__icontains = term) | Q(instructors__last_name__icontains = term))
         return queryset

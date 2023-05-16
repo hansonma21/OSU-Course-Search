@@ -6,29 +6,46 @@
     <input type="submit" value="Submit">
 </form>
 
-{% if course_sections %}
+{% if course_dict %}
 <table>
-    {% for course_section in course_sections %}
-        <th>Section ID</th>
-        <th>Section Info</th>
-        <th>Days and Times</th>
-        <th>Room</th>
-        <th>Instructor(s)</th>
-        <th>Meeting Dates</th>
-        <th>Availability</th>
-        <tr>
-            <td>{{ course_section.section_id }}</td>
-            <td>{{ course_section.section_info }}</td>
-            <td>{{ course_section.days_and_times }}</td>
-            <td>{{ course_section.room }}</td>
-            <td>
-                {% for instructor in course_section.instructors.all %}
-                    {{ instructor.first_name }} {{ instructor.last_name }},
-                {% endfor %}
-            </td>
-            <td>{{ course_section.start_date }} - {{ course_section.end_date }}</td>
-            <td>{{ course_section.availability }}</td>
-        </tr>
-    {% endfor %}
+    <tbody>
+        {% for course, course_sections in course_dict.items %}
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <th>{{ course.department.short_name }} {{ course.number }} - {{ course.name }}</th>
+                        </tr>
+
+                        {% for course_section in course_sections %}
+                            <tr>
+                                <th>Section ID</th>
+                                <th>Section Info</th>
+                                <th>Days and Times</th>
+                                <th>Room</th>
+                                <th>Instructor(s)</th>
+                                <th>Meeting Dates</th>
+                                <th>Availability</th>
+                            </tr>
+                            <tr>
+                                <td>{{ course_section.section_id }}</td>
+                                <td>{{ course_section.section_info }}</td>
+                                <td>{{ course_section.days_and_times }}</td>
+                                <td>{{ course_section.room }}</td>
+                                <td>
+                                    {% for instructor in course_section.instructors.all %}
+                                        {{ instructor.first_name }} {{ instructor.last_name }}<br>
+                                    {% endfor %}
+                                </td>
+                                <td>{{ course_section.start_date }} - {{ course_section.end_date }}</td>
+                                <td>{{ course_section.availability }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>
 {% endif %}
