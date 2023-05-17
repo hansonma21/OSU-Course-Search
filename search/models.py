@@ -111,11 +111,11 @@ class Course_Section(models.Model):
     instructors = models.ManyToManyField(Instructor) # only need one many to many field to represent many to many relationship of sections and instructors
 
     section_id = models.IntegerField() # e.g. 9510
-    section_info = models.CharField(max_length=20) # e.g. LEC-0010
-    days_and_times = models.CharField(max_length=50) # e.g. TuTh 9:35AM - 10:55 AM
+    section_info = models.CharField(max_length=50) # e.g. LEC-0010
+    days_and_times = models.CharField(max_length=100) # e.g. TuTh 9:35AM - 10:55 AM
     start_date = models.DateField() # e.g. 08/22/2023
     end_date = models.DateField() # e.g. 12/06/2023
-    room = models.CharField(max_length=50) # e.g. McPherson Lab 2015
+    room = models.CharField(max_length=100) # e.g. McPherson Lab 2015
     availability = models.CharField(max_length=15) # one of Available, Waitlist, or Closed
 
     # ensures that the term and section_id are unique

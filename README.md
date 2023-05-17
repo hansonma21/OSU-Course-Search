@@ -1,7 +1,8 @@
 # OSU-Course-Search
-Django Project, deployed on Heroku, that allows OSU students to search for their classes and find out who their instructors might be (that would otherwise be hidden). A very, very limited build can be viewed on osucoursesearch.herokuapp.com
+Django Project, deployed on Heroku, that allows OSU students to search for their classes and find out who their instructors might be (that would otherwise be hidden). A build can be viewed on osucoursesearch.herokuapp.com
 
 # Currently in a beta build
+To first get all the packages, you need to set up a virtual environment (venv) and run ```pip install -r requirements.txt```
 To test locally, you need to run
 ```python manage.py createsuperuser```
 Follow the directions to create an admin profile. From there run
