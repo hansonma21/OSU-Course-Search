@@ -87,8 +87,8 @@ class Instructor(models.Model):
     """An individual instructor entity; can belong to many sections"""
     # osu_identifier is only available for salaried staff, not available for all (many instructors are not on salary)
     # osu_identifier = models.IntegerField() # unique OSU identifier for instructors as found in Salary database (e.g. 100098)
-    first_name = models.CharField(max_length=50) # e.g. Mukul
-    last_name = models.CharField(max_length=50) # e.g. Soundarajan
+    first_name = models.CharField(max_length=100) # e.g. Mukul
+    last_name = models.CharField(max_length=100) # e.g. Soundarajan
     department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
 
     # ensures that the first_name, last_name, and department are unique
@@ -111,11 +111,11 @@ class Course_Section(models.Model):
     instructors = models.ManyToManyField(Instructor) # only need one many to many field to represent many to many relationship of sections and instructors
 
     section_id = models.IntegerField() # e.g. 9510
-    section_info = models.CharField(max_length=50) # e.g. LEC-0010
-    days_and_times = models.CharField(max_length=100) # e.g. TuTh 9:35AM - 10:55 AM
+    section_info = models.TextField() # e.g. LEC-0010
+    days_and_times = models.TextField() # e.g. TuTh 9:35AM - 10:55 AM
     start_date = models.DateField() # e.g. 08/22/2023
     end_date = models.DateField() # e.g. 12/06/2023
-    room = models.CharField(max_length=100) # e.g. McPherson Lab 2015
+    room = models.TextField() # e.g. McPherson Lab 2015
     availability = models.CharField(max_length=15) # one of Available, Waitlist, or Closed
 
     # ensures that the term and section_id are unique
