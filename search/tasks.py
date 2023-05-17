@@ -260,8 +260,22 @@ def update_sections(term, department):
     finally:
         driver.quit()
 
-def update_all_sections(term):
-    for dept in Department.objects.all().iterator():
+def update_all_sections(term, start_at=None):
+    """Updates all the sections in the database for a given term"""
+
+    # if term is not in the database this scheduled task fails
+    if not Term.objects.filter(osu_id=term).exists():
+        raise Exception("Term does not exist in database")
+
+    if start_at is not None:
+        if not Department.objects.filter(short_name=start_at).exists():
+            raise Exception("Department does not exist in database")
+        
+        departments = Department.objects.filter(short_name__gte=start_at).order_by('short_name')
+    else:
+        departments = Department.objects.all().order_by('short_name')
+    
+    for dept in departments.iterator():
         update_sections(term, dept.short_name)
 
 def update_instructors():
