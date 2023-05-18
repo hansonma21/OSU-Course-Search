@@ -47,9 +47,11 @@ def update_sections(term, department):
         # toWaitOn = driver.find_element(By.ID, "SSR_CLSRCH_WRK_LAST_NAME$8")
 
         select = Select(driver.find_element(By.NAME, "CLASS_SRCH_WRK2_STRM$35$"))
-        select.select_by_value(str(term))  # change this value for different semesters
 
-        webDriverWait.until(EC.staleness_of(toWaitOn))
+        if select.first_selected_option.get_attribute("value") != str(term):
+            select.select_by_value(str(term))  # change this value for different semesters
+            webDriverWait.until(EC.staleness_of(toWaitOn))
+        
         click_Add_Srch_Criteria(driver)
 
         # lastname search, type = text
@@ -125,7 +127,7 @@ def update_sections(term, department):
     def parse_form(soup: BeautifulSoup, queryset_of_instructors):
         """Parses the html of the form and returns a list of courses"""
 
-        # print("Parsing form")
+        print("Parsing form")
         # with open("test.html", "w") as f:
         #     f.write(soup.prettify())
 
@@ -213,6 +215,7 @@ def update_sections(term, department):
                 continue
 
             try:
+                print("Submitting form for " + last_name + "...")
                 submittedForm = submit_form(driver, url, term, department, last_name, numFails=0)
                 if submittedForm is not None:
                     soup = BeautifulSoup(submittedForm, 'html.parser')
@@ -236,15 +239,18 @@ def update_sections(term, department):
         raise Exception("Department does not exist in database")
 
     # selenium setup
+    print("test1")
     options = webdriver.ChromeOptions()
     # options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") # type: ignore
     options.add_argument('--no-sandbox')
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
+    # options.add_argument('--disable-gpu')
 
     # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options) # type: ignore
+    print("test2")
     driver = webdriver.Chrome(options=options)
+    print("test3")
     
     # url to scrape course data from (including hidden professors attached to them)
     url = "https://courses.osu.edu/psc/csosuct/EMPLOYEE/PUB/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?PortalActualURL=https%3a%2f%2fcourses.osu.edu%2fpsc%2fcsosuct%2fEMPLOYEE%2fPUB%2fc%2fCOMMUNITY_ACCESS.CLASS_SEARCH.GBL&PortalRegistryName=EMPLOYEE&PortalServletURI=https%3a%2f%2fcourses.osu.edu%2fpsp%2fcsosuct%2f&PortalURI=https%3a%2f%2fcourses.osu.edu%2fpsc%2fcsosuct%2f&PortalHostNode=CAMP&NoCrumbs=yes&PortalKeyStruct=yes"
