@@ -136,17 +136,7 @@ Q_CLUSTER = {
     'queue_limit': 500,
     'cpu_affinity': 1,
     'label': 'Django Q',
-    'redis': {
-        'host': 'localhost',
-        'port': 6379,
-        'db': 0,
-        'password': None,
-        'socket_timeout': None,
-        'charset': 'utf-8',
-        'errors': 'strict',
-        'unix_socket_path': None
-    }
-    # 'redis': 'redis://:p5d61132f3f0b874240b24fb2c26cc9f7a502acf62fd9ea2d0794cf990a3820a6@ec2-52-22-202-137.compute-1.amazonaws.com:10149'
+    'redis': 'redis://:p5d61132f3f0b874240b24fb2c26cc9f7a502acf62fd9ea2d0794cf990a3820a6@ec2-52-22-202-137.compute-1.amazonaws.com:10149'
 }
 
 import django_heroku
