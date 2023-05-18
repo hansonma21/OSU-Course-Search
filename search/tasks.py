@@ -47,9 +47,11 @@ def update_sections(term, department):
         # toWaitOn = driver.find_element(By.ID, "SSR_CLSRCH_WRK_LAST_NAME$8")
 
         select = Select(driver.find_element(By.NAME, "CLASS_SRCH_WRK2_STRM$35$"))
-        select.select_by_value(str(term))  # change this value for different semesters
 
-        webDriverWait.until(EC.staleness_of(toWaitOn))
+        if select.first_selected_option.get_attribute("value") != str(term):
+            select.select_by_value(str(term))  # change this value for different semesters
+            webDriverWait.until(EC.staleness_of(toWaitOn))
+        
         click_Add_Srch_Criteria(driver)
 
         # lastname search, type = text
@@ -213,6 +215,7 @@ def update_sections(term, department):
                 continue
 
             try:
+                print("Submitting form for " + last_name + "...")
                 submittedForm = submit_form(driver, url, term, department, last_name, numFails=0)
                 if submittedForm is not None:
                     soup = BeautifulSoup(submittedForm, 'html.parser')
