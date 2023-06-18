@@ -1,8 +1,10 @@
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import os
 import traceback
 from bs4 import BeautifulSoup
 from .models import *
+from django_q.models import Schedule
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
@@ -239,18 +241,18 @@ def update_sections(term, department):
         raise Exception("Department does not exist in database")
 
     # selenium setup
-    print("test1")
+    # print("test1")
     options = webdriver.ChromeOptions()
     # options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") # type: ignore
     options.add_argument('--no-sandbox')
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument('--headless')
-    # options.add_argument('--disable-gpu')
+    options.add_argument('--disable-gpu')
 
     # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options) # type: ignore
-    print("test2")
+    # print("test2")
     driver = webdriver.Chrome(options=options)
-    print("test3")
+    # print("test3")
     
     # url to scrape course data from (including hidden professors attached to them)
     url = "https://courses.osu.edu/psc/csosuct/EMPLOYEE/PUB/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?PortalActualURL=https%3a%2f%2fcourses.osu.edu%2fpsc%2fcsosuct%2fEMPLOYEE%2fPUB%2fc%2fCOMMUNITY_ACCESS.CLASS_SEARCH.GBL&PortalRegistryName=EMPLOYEE&PortalServletURI=https%3a%2f%2fcourses.osu.edu%2fpsp%2fcsosuct%2f&PortalURI=https%3a%2f%2fcourses.osu.edu%2fpsc%2fcsosuct%2f&PortalHostNode=CAMP&NoCrumbs=yes&PortalKeyStruct=yes"
@@ -284,6 +286,29 @@ def update_all_sections(term, start_at=None):
     
     for dept in departments.iterator():
         update_sections(term, dept.short_name)
+
+def update_next_section(task):
+    """Updates the next section in the database for a given term"""
+
+    term = task.kwargs.get('term')
+
+    previous_department = task.kwargs.get('department')
+    next_department = Department.objects.filter(short_name__gt=previous_department).order_by('short_name').first()
+
+    if next_department is not None:
+        next_department_short_name = next_department.short_name
+        print(next_department_short_name)
+
+        # create a new task to update the next department
+        schedule_name = '{}_{}_auto'.format(next_department, term)
+        new_kwargs = {'term': term, 'department': next_department_short_name}
+        Schedule.objects.create(name=schedule_name, 
+                                func=task.func, 
+                                kwargs=new_kwargs, 
+                                schedule_type=Schedule.ONCE, 
+                                hook=task.hook)
+
+
 
 def update_instructors():
     """Updates the instructors in the database"""
