@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-z&e2h-)sn2xf$tei#!74upfd@@jhju@%9jd@_05*ndtyi@f@es'
+SECRET_KEY = 'django-insecure-z&e2h-)sn2xf$tei#!74upfd@@jhju@%9jd@_05*ndtyi@f@es'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["osucoursesearch.herokuapp.com",]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -129,12 +129,25 @@ Q_CLUSTER = {
     'name': 'django_q_osu_course_search',
     'workers': 1,
     'recycle': 500,
-    'timeout': None,
+    'timeout': 3600,
+    'retry': 3630,
     'compress': True,
     'save_limit': 0,
     'queue_limit': 500,
     'cpu_affinity': 1,
     'label': 'Django Q',
+    'ack_failures': True,
+    'max_attempts': 1,
+#     'redis': {
+#         'host': 'localhost',
+#         'port': 6379,
+#         'db': 0,
+#         'password': None,
+#         'socket_timeout': None,
+#         'charset': 'utf-8',
+#         'errors': 'strict',
+#         'unix_socket_path': None
+#     }
     'redis': 'redis://:p5d61132f3f0b874240b24fb2c26cc9f7a502acf62fd9ea2d0794cf990a3820a6@ec2-52-22-202-137.compute-1.amazonaws.com:10149'
 }
 
