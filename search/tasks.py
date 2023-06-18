@@ -1,8 +1,10 @@
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import os
 import traceback
 from bs4 import BeautifulSoup
 from .models import *
+from django_q.models import Schedule
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
@@ -281,6 +283,29 @@ def update_all_sections(term, start_at=None):
     
     for dept in departments.iterator():
         update_sections(term, dept.short_name)
+
+def update_next_section(task):
+    """Updates the next section in the database for a given term"""
+
+    term = task.kwargs.get('term')
+
+    previous_department = task.kwargs.get('department')
+    next_department = Department.objects.filter(short_name__gt=previous_department).order_by('short_name').first()
+
+    if next_department is not None:
+        next_department_short_name = next_department.short_name
+        print(next_department_short_name)
+
+        # create a new task to update the next department
+        schedule_name = '{}_{}_auto'.format(next_department, term)
+        new_kwargs = {'term': term, 'department': next_department_short_name}
+        Schedule.objects.create(name=schedule_name, 
+                                func=task.func, 
+                                kwargs=new_kwargs, 
+                                schedule_type=Schedule.ONCE, 
+                                hook=task.hook)
+
+
 
 def update_instructors():
     """Updates the instructors in the database"""

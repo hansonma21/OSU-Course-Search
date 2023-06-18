@@ -127,12 +127,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 Q_CLUSTER = {
     'name': 'django_q_osu_course_search',
-    'workers': 8,
+    'workers': 1,
     'recycle': 500,
-    'timeout': 3600,
-    'retry': 3630,
+    'timeout': None,
     'compress': True,
-    'save_limit': 250,
+    'save_limit': 0,
     'queue_limit': 500,
     'cpu_affinity': 1,
     'label': 'Django Q',
