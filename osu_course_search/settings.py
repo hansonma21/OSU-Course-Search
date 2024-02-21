@@ -27,7 +27,13 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:1337'
+]
 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:1337',
+]
 
 # Application definition
 
@@ -131,6 +137,22 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Q_CLUSTER = {
+#     'name': 'django_q_osu_course_search',
+#     'workers': 1,
+#     'timeout': 3600,
+#     'retry': 3630,
+#     'queue_limit': 50,
+#     'bulk': 10,
+#     'orm': 'default',
+#     'catch_up': False,  # do not replay missed schedules
+#     'redis': {
+#         'host': 'redis',  # Use the hostname of your Redis service
+#         'port': 6379,  # The default Redis port
+#         'db': 0,  # The database number
+#     }
+# }
+
 Q_CLUSTER = {
     'name': 'django_q_osu_course_search',
     'workers': 1,
@@ -145,14 +167,9 @@ Q_CLUSTER = {
     'ack_failures': True,
     'max_attempts': 1,
     'redis': {
-        'host': 'localhost',
-        'port': 6379,
-        'db': 0,
-        'password': None,
-        'socket_timeout': None,
-        'charset': 'utf-8',
-        'errors': 'strict',
-        'unix_socket_path': None
+        'host': 'redis',  # Use the hostname of your Redis service
+        'port': 6379,  # The default Redis port
+        'db': 0,  # The database number
     }
     # 'redis': 'redis://:p5d61132f3f0b874240b24fb2c26cc9f7a502acf62fd9ea2d0794cf990a3820a6@ec2-52-22-202-137.compute-1.amazonaws.com:10149'
 }

@@ -17,7 +17,7 @@ services:
   db:
     image: postgres:15
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - ./data/postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env.prod.db
   nginx:
@@ -28,6 +28,23 @@ services:
       - 1337:80
     depends_on:
       - web
+  django-q:
+    build: .
+    command: python manage.py qcluster
+    env_file:
+      - ./.env.prod
+    depends_on:
+      - redis
+      - db
+      - web
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+  selenium:
+    image: selenium/standalone-chrome:latest
+    volumes:
+      - /dev/shm:/dev/shm
 
 volumes:
   postgres_data:

@@ -3,5 +3,5 @@ venv
 new_venv
 .env.prod
 .env.prod.db
-entrypoint.prod.sh
 old .env
+data

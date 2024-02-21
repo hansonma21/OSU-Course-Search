@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 import os
+import multiprocessing
 import traceback
 from bs4 import BeautifulSoup
 from .models import *
@@ -13,6 +14,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 ## TODO ##
 # - write the scheduled code HERE (in functions that take arguments)
@@ -232,42 +234,55 @@ def update_sections(term, department):
         return None
             
     
-    # if term is not in the database this scheduled task fails
-    if not Term.objects.filter(osu_id=term).exists():
-        raise Exception("Term does not exist in database")
-    
-    # if the department is not in the database this scheduled task fails
-    if not Department.objects.filter(short_name=department).exists():
-        raise Exception("Department does not exist in database")
-
-    # selenium setup
-    # print("test1")
-    options = webdriver.ChromeOptions()
-    # options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") # type: ignore
-    options.add_argument('--no-sandbox')
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-
-    # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options) # type: ignore
-    # print("test2")
-    driver = webdriver.Chrome(options=options)
-    # print("test3")
-    
-    # url to scrape course data from (including hidden professors attached to them)
-    url = "https://courses.erppub.osu.edu/psp/ps/EMPLOYEE/PUB/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?"
-
-    try:
-        failed_name = search_all_instructors_in_department(driver=driver, url=url, term=term, department=department, nameToStart=None)
-        while failed_name is not None:
-            failed_name = search_all_instructors_in_department(driver, url, term, department, failed_name)
+    def update_sections_helper(term, department):
+        # if term is not in the database this scheduled task fails
+        if not Term.objects.filter(osu_id=term).exists():
+            raise Exception("Term does not exist in database")
         
-        return True
-    except Exception as E:
-        print(traceback.format_exc())
-        return False
-    finally:
-        driver.quit()
+        # if the department is not in the database this scheduled task fails
+        if not Department.objects.filter(short_name=department).exists():
+            raise Exception("Department does not exist in database")
+
+        # selenium setup
+        # print("test1")
+        # options = webdriver.ChromeOptions()
+        # # options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") # type: ignore
+        # options.add_argument('--no-sandbox')
+        # options.add_argument("--disable-dev-shm-usage")
+        # options.add_argument('--headless')
+        # options.add_argument('--disable-gpu')
+
+        # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options) # type: ignore
+        # print("test2")
+        # driver = webdriver.Chrome(options=options)
+        # print("test3")
+
+        driver = webdriver.Remote(
+            command_executor='http://selenium:4444/wd/hub',
+            desired_capabilities=DesiredCapabilities.CHROME,
+            )
+        
+        # url to scrape course data from (including hidden professors attached to them)
+        url = "https://courses.erppub.osu.edu/psp/ps/EMPLOYEE/PUB/c/COMMUNITY_ACCESS.CLASS_SEARCH.GBL?"
+
+        try:
+            failed_name = search_all_instructors_in_department(driver=driver, url=url, term=term, department=department, nameToStart=None)
+            while failed_name is not None:
+                failed_name = search_all_instructors_in_department(driver, url, term, department, failed_name)
+            
+            # return True
+        except Exception as E:
+            print(traceback.format_exc())
+            # return False
+        finally:
+            driver.quit()
+    
+    # call the helper function via multiprocessing
+    p = multiprocessing.Process(target=update_sections_helper, args=(term, department))
+    # run the function in a separate process
+    p.start()
+    # wait for process to finish
+    p.join()
 
 def update_all_sections(term, start_at=None):
     """Updates all the sections in the database for a given term"""
