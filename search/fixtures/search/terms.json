@@ -4,7 +4,8 @@
         "pk": 1,
         "fields": {
             "osu_id": "1232",
-            "name": "SP23"
+            "name": "SP23",
+            "display_boolean": false
         }
     },
     {
@@ -12,7 +13,8 @@
         "pk": 2,
         "fields": {
             "osu_id": "1234",
-            "name": "SU23"
+            "name": "SU23",
+            "display_boolean": false
         }
     },
     {
@@ -20,7 +22,35 @@
         "pk": 3,
         "fields": {
             "osu_id": "1238",
-            "name": "AU23"
+            "name": "AU23",
+            "display_boolean": false
+        }
+    },
+    {
+        "model": "search.term",
+        "pk": 4,
+        "fields": {
+            "osu_id": "1242",
+            "name": "SP24",
+            "display_boolean": false
+        }
+    },
+    {
+        "model": "search.term",
+        "pk": 5,
+        "fields": {
+            "osu_id": "1244",
+            "name": "SU24",
+            "display_boolean": true
+        }
+    },
+    {
+        "model": "search.term",
+        "pk": 6,
+        "fields": {
+            "osu_id": "1248",
+            "name": "AU24",
+            "display_boolean": true
         }
     }
 ]
