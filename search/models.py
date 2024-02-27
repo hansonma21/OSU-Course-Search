@@ -5,6 +5,7 @@ class Term(models.Model):
     """An individual term/semester; has Courses"""
     osu_id = models.IntegerField() # unique OSU identifier for terms (e.g. 1238)
     name = models.CharField(max_length=4) # e.g. AU23
+    display_boolean = models.BooleanField(default=True) # whether or not to display the term in the UI
 
     # ensures that the osu_id and name are unique
     class Meta:

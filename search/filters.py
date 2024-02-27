@@ -4,7 +4,7 @@ from .models import *
 
 class Course_SectionFilter(django_filters.FilterSet):
     """Filter for Course_Section model, will allow users to filter by Term, Course, and Instructor"""
-    term = django_filters.ModelChoiceFilter(field_name='term__name', queryset=Term.objects.all(), label='Term') # term is the term (e.g. Spring 2021) - ModelChoiceField
+    term = django_filters.ModelChoiceFilter(field_name='term__name', queryset=Term.objects.filter(display_boolean=True), label='Term') # term is the term (e.g. Spring 2021) - ModelChoiceField
     subject = django_filters.AllValuesFilter(field_name='course__department__short_name', label='Subject') # subject is the department (e.g. CSE) - ChoiceField
     number = django_filters.CharFilter(field_name='course__number', method='filter_by_number') # number is the course number (e.g. 2421) - CharField
     instructor = django_filters.CharFilter(field_name='instructors', method='filter_by_instructor', label='Instructor') # instructor is the instructor's name- CharField
