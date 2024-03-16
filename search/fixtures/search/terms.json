@@ -32,7 +32,7 @@
         "fields": {
             "osu_id": "1242",
             "name": "SP24",
-            "display_boolean": false
+            "display_boolean": true
         }
     },
     {

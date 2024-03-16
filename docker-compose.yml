@@ -15,11 +15,28 @@ services:
   db:
     image: postgres:15
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - ./data/postgres_dev_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=osu_course_search
       - POSTGRES_PASSWORD=osu_course_search
       - POSTGRES_DB=osu_course_search_dev
+  django-q:
+    build: .
+    command: python manage.py qcluster
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - redis
+      - db
+      - web
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+  selenium:
+    image: selenium/standalone-chrome:latest
+    volumes:
+      - /dev/shm:/dev/shm
 
 volumes:
   postgres_data:

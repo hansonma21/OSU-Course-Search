@@ -49,7 +49,7 @@ class CourseManager(models.Manager):
 
 class Course(models.Model):
     """An individual course entity; belongs to a department; belongs to many terms"""
-    name = models.TextField() # e.g. Systems I: Introduction...
+    name = models.TextField(null=True) # e.g. Systems I: Introduction...
     department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
     number = models.CharField(max_length=20) # e.g. 2421
     description = models.TextField(null=True) # e.g. Introduction to computer architecture at machine...
@@ -108,21 +108,25 @@ class Course_Section(models.Model):
     """An individual section entity; belongs to Course and a Term, can have many instructors"""
     course = models.ForeignKey(Course, on_delete=models.CASCADE) # referencing a Course
     term = models.ForeignKey(Term, on_delete=models.CASCADE) # referencing a Term
+    link_number = models.IntegerField(null=True) # link multiple course sections together (linked sections have the same link_number)
 
     instructors = models.ManyToManyField(Instructor) # only need one many to many field to represent many to many relationship of sections and instructors
 
     section_id = models.IntegerField() # e.g. 9510
-    section_info = models.TextField() # e.g. LEC-0010
-    days_and_times = models.TextField() # e.g. TuTh 9:35AM - 10:55 AM
-    start_date = models.DateField() # e.g. 08/22/2023
-    end_date = models.DateField() # e.g. 12/06/2023
-    room = models.TextField() # e.g. McPherson Lab 2015
-    availability = models.CharField(max_length=15) # one of Available, Waitlist, or Closed
+    section_info = models.TextField(null=True) # e.g. LEC-0010
+    days_and_times = models.TextField(null=True) # e.g. TuTh 9:35AM - 10:55 AM
+    start_date = models.DateField(null=True) # e.g. 08/22/2023
+    end_date = models.DateField(null=True) # e.g. 12/06/2023
+    room = models.TextField(null=True) # e.g. McPherson Lab 2015
+    availability = models.CharField(max_length=15, null=True) # one of Available, Waitlist, or Closed
+
+    barrett_data_json = models.JSONField(null=True) # JSON data of course_section info from Barrett source
+    # stores "type", "autoenrolls", "days", "time", "location", "enrolled", "limit", "waitlist", "duration", "instructors"
 
     # ensures that the term and section_id are unique
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['term', 'section_id'], name='unique_term_section_id')
+            models.UniqueConstraint(fields=['term', 'section_id'], name='unique_term_section_id'),
         ]
 
     def __str__(self):
@@ -130,3 +134,26 @@ class Course_Section(models.Model):
         instructors_str = ['{} {}'.format(instructor.first_name, instructor.last_name) for instructor in self.instructors.all().iterator()]
         return '{}, {}; Instructors: {}'.format(course_and_term_str, self.section_id, instructors_str)
 
+class Search_Query(models.Model):
+    """An individual search query entity; stores search queries"""
+    # no foreign keys, just store the search query and timestamp so we can see what users are searching for and when
+    # no foreign keys guarantees that we can store any search query, even if it doesn't match a course section 
+    # (and on deletion of course sections, we don't delete search queries)
+    # e.g. {"term": "AU23", "subject": "CSE", "number": "2421", "instructor": "LaTour"}
+    search_query = models.JSONField(null=True) # JSON data of search query
+    # stores "term" (e.g. AU23), "subject" (e.g. CSE), "number" (e.g. 2421), "instructor" (e.g. LaTour)
+    timestamp = models.DateTimeField(auto_now_add=True) # e.g. 2023-08-22 09:35:00
+
+    def __str__(self):
+        return '{} - {}'.format(self.search_query, self.timestamp.strftime('%Y-%m-%d %H:%M:%S'))
+
+class Error_Log(models.Model):
+    """An individual error log entity; stores error messages"""
+    error_message = models.TextField() # e.g. Error message here
+    stack_trace = models.TextField(null=True) # e.g. Stack trace here
+    function_name = models.TextField(null=True) # e.g. Function name here
+    additional_info = models.TextField(null=True) # e.g. Additional info here
+    timestamp = models.DateTimeField(auto_now_add=True) # e.g. 2023-08-22 09:35:00
+
+    def __str__(self):
+        return '{}: {} - {}'.format(self.function_name, self.error_message, self.timestamp.strftime('%Y-%m-%d %H:%M:%S'))

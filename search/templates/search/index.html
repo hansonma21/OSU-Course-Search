@@ -12,36 +12,86 @@
         {% for course, course_sections in course_dict.items %}
             <tr>
                 <td>
-                    <table>
-                        <tr>
-                            <th>{{ course.department.short_name }} {{ course.number }} - {{ course.name }}</th>
-                        </tr>
+                    <table style="border: 1px solid black;">
+                        <thead>
+                            <tr>
+                                <th>{{ course.department.short_name }} {{ course.number }} - {{ course.name }}</th>
+                            </tr>
+                        </thead>
 
-                        {% for course_section in course_sections %}
-                            <tr>
-                                <th>Section ID</th>
-                                <th>Section Info</th>
-                                <th>Days and Times</th>
-                                <th>Room</th>
-                                <th>Instructor(s)</th>
-                                <th>Meeting Dates</th>
-                                <th>Availability</th>
-                            </tr>
-                            <tr>
-                                <td>{{ course_section.section_id }}</td>
-                                <td>{{ course_section.section_info }}</td>
-                                <td>{{ course_section.days_and_times }}</td>
-                                <td>{{ course_section.room }}</td>
-                                <td>
-                                    {% for instructor in course_section.instructors.all %}
-                                        {{ instructor.first_name }} {{ instructor.last_name }}<br>
+
+                        {% for link_num, sections in course_sections.items %}
+                            <tbody>
+                                <table style="border: 1px solid black;">
+                                    {% for section in sections %}
+                                        <tr>
+                                            <th>Section ID</th>
+                                            <th>Section Info</th>
+                                            <th>Days and Times</th>
+                                            <th>Room</th>
+                                            <th>Instructor(s)</th>
+                                            <th>Meeting Dates</th>
+                                            <th>Enrollment</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {{ section.section_id }}
+                                            </td>
+                                            <td>
+                                                {% if section.section_info %}
+                                                    {{ section.section_info }}
+                                                {% else %}
+                                                    {{ section.barrett_data_json.type }}
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if section.days_and_times %}
+                                                    {{ section.days_and_times }}
+                                                {% else %}
+                                                    {{ section.barrett_data_json.days }} {{ section.barrett_data_json.time }}
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if section.room %}
+                                                    {{ section.room }}
+                                                {% else %}
+                                                    {{ section.barrett_data_json.location }}
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if section.instructors.all %}
+                                                    {% for instructor in section.instructors.all %}
+                                                        {{ instructor.first_name }} {{ instructor.last_name }}<br>
+                                                    {% endfor %}
+                                                {% else %}
+                                                    {% for instructor in section.barrett_data_json.instructors %}
+                                                        {{ instructor }}<br>
+                                                    {% empty %}
+                                                        UNKNOWN
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if section.start_date or section.end_date %}
+                                                    {{ section.start_date }} - {{ section.end_date }}
+                                                {% else %}
+                                                    {{ section.barrett_data_json.duration }}
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if section.availability %}
+                                                    {{ section.availability }} - {{ section.barrett_data_json.enrolled }}/{{ section.barrett_data_json.limit }}{{ section.barrett_data_json.waitlist }}
+                                                {% else %}
+                                                    {{ section.barrett_data_json.enrolled }}/{{ section.barrett_data_json.limit }}{{ section.barrett_data_json.waitlist }}
+                                                {% endif %}
+                                            </td>
+                                        </tr>
                                     {% endfor %}
-                                </td>
-                                <td>{{ course_section.start_date }} - {{ course_section.end_date }}</td>
-                                <td>{{ course_section.availability }}</td>
-                            </tr>
+                                </table>
+                            </tbody>
                         {% endfor %}
 
+                        <br>
                     </table>
                 </td>
             </tr>
