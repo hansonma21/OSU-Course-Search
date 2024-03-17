@@ -1,10 +1,11 @@
+import traceback
 from typing import Any
 from django.db.models.query import QuerySet
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 from .forms import SearchForm
-from .models import Course, Course_Section
+from .models import Course, Course_Section, Department, Error_Log, Search_Query, Term
 from .filters import Course_SectionFilter
 
 # Create your views here.
@@ -42,11 +43,47 @@ from .filters import Course_SectionFilter
 def index(request):
     """View for index page, will display search form and search results"""
 
+    def save_query(myFilter: Course_SectionFilter):
+        # obtain each of the values from myFilter
+        term = myFilter.data.get('term', None)
+        subject = myFilter.data.get('subject', None)
+        number = myFilter.data.get('number', None)
+        instructor = myFilter.data.get('instructor', None)
+
+        # get the term name from the term id
+        if term is not None:
+            try:
+                term_name = Term.objects.get(id=term).name
+            except Term.DoesNotExist:
+                term_name = None
+        
+        # create a Search_Query object to store the search parameters
+        search_query = {
+            "term": term_name,
+            "subject": subject,
+            "number": number,
+            "instructor": instructor
+        }
+        
+        try:
+            new_search_query = Search_Query.objects.create(search_query=search_query)
+            new_search_query.save()
+        except Exception as E:
+            # write the error to the error logs
+            error_message = "Error saving search query for term: {}, subject: {}, number: {}, instructor: {}".format(term_name, subject, number, instructor)
+            error_log = Error_Log.objects.create(error_message=error_message,
+                                                  stack_trace=traceback.format_exc(),
+                                                  function_name="views.index.save_query")
+            error_log.save()
+
+
     if request.method == "POST":
         # if the user has submitted the form, create a filter instance and populate it with data from the request
         myFilter = Course_SectionFilter(request.POST)
         course_dict = None
         error_message = None
+
+        save_query(myFilter)
 
         # check if the filter is valid, if so, get the queryset and pass it to the template
         if myFilter.is_valid():
@@ -58,7 +95,15 @@ def index(request):
 
                 course_dict = {}
                 for course in courses:
-                    course_dict[course] = course_sections.filter(course=course)
+                    course_sections_for_course = course_sections.filter(course=course)
+                    # group the course_sections_for_course by link_number
+                    course_dict[course] = {}
+                    for section in course_sections_for_course:
+                        if section.link_number in course_dict[course]:
+                            course_dict[course][section.link_number].append(section)
+                        else:
+                            course_dict[course][section.link_number] = [section]
+                    
             else:
                 error_message = "No results found. Please try again."
         else:

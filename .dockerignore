@@ -1,0 +1,6 @@
+# .dockerignore
+.venv
+.new_venv
+.git
+.gitignore
+test.ipynb

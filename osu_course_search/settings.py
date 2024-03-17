@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +21,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z&e2h-)sn2xf$tei#!74upfd@@jhju@%9jd@_05*ndtyi@f@es'
+SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = 'foo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:1337'
+]
 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:1337',
+]
 
 # Application definition
 
@@ -77,9 +85,13 @@ WSGI_APPLICATION = 'osu_course_search.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.environ.get("SQL_USER", "user"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+        "HOST": os.environ.get("SQL_HOST", "localhost"),
+        "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
 
@@ -118,12 +130,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Q_CLUSTER = {
+#     'name': 'django_q_osu_course_search',
+#     'workers': 1,
+#     'timeout': 3600,
+#     'retry': 3630,
+#     'queue_limit': 50,
+#     'bulk': 10,
+#     'orm': 'default',
+#     'catch_up': False,  # do not replay missed schedules
+#     'redis': {
+#         'host': 'redis',  # Use the hostname of your Redis service
+#         'port': 6379,  # The default Redis port
+#         'db': 0,  # The database number
+#     }
+# }
 
 Q_CLUSTER = {
     'name': 'django_q_osu_course_search',
@@ -138,18 +167,13 @@ Q_CLUSTER = {
     'label': 'Django Q',
     'ack_failures': True,
     'max_attempts': 1,
-#     'redis': {
-#         'host': 'localhost',
-#         'port': 6379,
-#         'db': 0,
-#         'password': None,
-#         'socket_timeout': None,
-#         'charset': 'utf-8',
-#         'errors': 'strict',
-#         'unix_socket_path': None
-#     }
-    'redis': 'redis://:p5d61132f3f0b874240b24fb2c26cc9f7a502acf62fd9ea2d0794cf990a3820a6@ec2-52-22-202-137.compute-1.amazonaws.com:10149'
+    'redis': {
+        'host': 'redis',  # Use the hostname of your Redis service
+        'port': 6379,  # The default Redis port
+        'db': 0,  # The database number
+    }
+    # 'redis': 'redis://:p5d61132f3f0b874240b24fb2c26cc9f7a502acf62fd9ea2d0794cf990a3820a6@ec2-52-22-202-137.compute-1.amazonaws.com:10149'
 }
 
-import django_heroku
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())

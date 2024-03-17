@@ -1,0 +1,911 @@
+CSE         1242 (Spring 2024)         updated: 26-Feb-2024
+
+                       class#    (autoenrolls)                                enrld/limit/+wait
+
+     CSE 1110             6712 L                                      ONLINE     117/150      M.Mallon, X.Chen (TA)
+
+     CSE 1111             6713 L  ( 6715)         T R     0935A-1055  BE0148      29/38       C.Grimme
+     CSE 1111             6715 B                 M        1020A       DL0280      29/40       H.Ahn (TA)
+
+     CSE 1111             6716 L  ( 6717)         T R     1110A-1230  BE0140      30/40       C.Grimme
+     CSE 1111             6717 B                 M        1130A       DL0280      30/40       H.Ahn (TA)
+
+     CSE 1111             6718 L  ( 6719)         T R     0220P-0340  DL0264      33/40       C.Grimme
+     CSE 1111             6719 B                 M        0150P       DL0280      33/40       H.Ahn (TA)
+
+     CSE 1222             7397 L                  T R     1020A       DL0113      78/80       J.Wilcox
+     CSE 1222             7398 B  ( 7397)        M        0800A       BE0480      37/40       N.Cliffel (TA)
+     CSE 1222             7399 B  ( 7397)        M        0910A       BE0480      41/40       D.Nguyen (TA)
+
+     CSE 1222             7379 L                  T R     1130A       DL0113     152/160      J.Wilcox
+     CSE 1222             7380 B  ( 7379)        M        1020A       BE0310      77/80       H.Li (TA)
+     CSE 1222             7468 B  ( 7379)        M        1020A       BE0310       0/0        H.Li (TA)
+     CSE 1222             7469 B  ( 7379)        M        1130A       BE0310      73/78       S.Hamidi Dehshali (TA)
+     CSE 1222             7470 B  ( 7379)        M        1130A       BE0310       2/2        S.Hamidi Dehshali (TA)
+
+     CSE 1223            11730 L                   W F    0300P       DL0113     136/160      G.Vaughan
+     CSE 1223            12338 B  (11730)         T       0300P       BE0310      62/80       H.Kohli (TA)
+     CSE 1223            35476 B  (11730)         T       0410P       BE0310      37/40       Y.Jiang (TA)
+     CSE 1223            35477 B  (11730)         T       0410P       BE0310      37/40       Y.Jiang (TA)
+
+     CSE 1223            12376 L                   W F    1020A       DL0113     157/160      S.Atiq
+     CSE 1223            12377 B  (12376)         T       0910A       BE0310      40/40       K.Hassan (TA)
+     CSE 1223            12378 B  (12376)         T       0910A       BE0310      40/40       K.Hassan (TA)
+     CSE 1223            12379 B  (12376)         T       1020A       BE0310      39/40       J.Liu (TA)
+     CSE 1223            12380 B  (12376)         T       1020A       BE0310      38/40       J.Liu (TA)
+
+     CSE 1224            11731 L                   W F    0150P       KN0250     128/160      M.Fritz
+     CSE 1224            11732 B  (11731)        M        0300P       BE0470      75/80       E.Nowrouzi (TA)
+     CSE 1224            12078 B  (11731)        M        0300P       BE0470       0/0        E.Nowrouzi (TA)
+     CSE 1224            12079 B  (11731)        M        0410P       BE0470      53/80       A.Potlapally (TA)
+     CSE 1224            12080 B  (11731)        M        0410P       BE0470       0/0        A.Potlapally (TA)
+
+     CSE 1224            12332 L                   W F    0410P       EA0160     118/160      M.Fritz
+     CSE 1224            12333 B  (12332)        M        0520P       BE0470      70/80       P.Guha Neogi (TA)
+     CSE 1224            12334 B  (12332)        M        0520P       BE0470       0/0        P.Guha Neogi (TA)
+     CSE 1224            12335 B  (12332)        M        0625P       BE0470      48/80       A.Meghrazi (TA)
+     CSE 1224            12336 B  (12332)        M        0625P       BE0470       0/0        A.Meghrazi (TA)
+
+     CSE 2111             6720 L                  T R     0910A       DL0113     156/160      C.FARRIS
+     CSE 2111             6721 B  ( 6720)            F    1210P-0200  BE0310      79/80       A.Karimi Monsefi (TA)
+     CSE 2111             6722 B  ( 6720)            F    0215P-0405  BE0470      77/80       A.Karimi Monsefi (TA)
+
+     CSE 2111             6723 L                  T R     0410P       DL0113     159/160      M.Jackson
+     CSE 2111             6724 B  ( 6723)          W      1210P-0200  BE0310      80/80       A.Kumar (TA)
+     CSE 2111             6725 B  ( 6723)          W      0215P-0405  BE0470      79/80       A.Kumar (TA)
+
+     CSE 2111             6726 L                  T R     1020A       SH0100     159/160      C.FARRIS
+     CSE 2111             6727 B  ( 6726)           R     1210P-0200  BE0310      80/80       Y.Wang (TA)
+     CSE 2111             6728 B  ( 6726)           R     0215P-0405  BE0470      79/80       Y.Wang (TA)
+
+     CSE 2111             6729 L                  T R     1240P       DL0113     159/160      C.McKinley
+     CSE 2111             6730 B  ( 6729)          W      0800A-0950  BE0310      80/80       S.Salarian (TA)
+     CSE 2111             6731 B  ( 6729)          W      1005A-1155  BE0310      79/80       S.Salarian (TA)
+
+     CSE 2111             7104 L                  T R     0530P       DL0113     156/160      M.Jackson
+     CSE 2111             7105 B  ( 7104)            F    0420P-0610  BE0470      80/80       A.Kabir (TA)
+     CSE 2111             7106 B  ( 7104)            F    0625P-0815  BE0470      76/80       A.Kabir (TA)
+
+     CSE 2111             7113 L                  T R     1130A       EA0160     160/160      C.FARRIS
+     CSE 2111             7114 B  ( 7113)          W      0420P-0610  BE0470      80/80       A.Talukdar (TA)
+     CSE 2111             7115 B  ( 7113)          W      0625P-0815  BE0470      80/80       A.Talukdar (TA)
+
+     CSE 2111             7134 L                  T R     0300P       DL0113     158/160      D.Kline
+     CSE 2111             7135 B  ( 7134)           R     0800A-0950  BE0310      79/80       L.Mo (TA)
+     CSE 2111             7231 B  ( 7134)           R     1005A-1155  BE0310      79/80       L.Mo (TA)
+
+     CSE 2111             7241 L                                      ONLINE     153/160      C.McKinley
+     CSE 2111             7246 B  ( 7241)           R     0420P-0610  BE0310      78/80       T.Perera (TA)
+     CSE 2111             7247 B  ( 7241)           R     0625P-0815  BE0310      75/80       T.Perera (TA)
+
+     CSE 2112             7244 L  ( 7249)           R     0220P-0340  BE0120      66/80       M.Mallon
+     CSE 2112             7249 B                  T       0220P-0340  BE0470      66/80       S.Awasthi (TA)
+
+     CSE 2122             6732 L                   W F    0355P-0515  CL0220      33/40       L.Madrid
+
+     CSE 2122            36859 L                  T       0220P-0340               0/0        
+
+     CSE 2122            37230 L                 M W      0355P-0515               0/0        
+
+     CSE 2123            11733 L                   W F    0150P       ONLINE     135/160      R.LaTour
+     CSE 2123            11734 B  (11733)        M        0150P       ONLINE      73/80       J.Byun (TA)
+     CSE 2123            12077 B  (11733)        M        0410P       BE0310      62/80       J.Meng (TA)
+
+     CSE 2221             6813 L  ( 6814)         T R     0800A       DL0357      43/46       P.Bucci
+     CSE 2221             6814 B                   W F    0800A       BE0470      43/46       P.Bucci (GR)
+
+     CSE 2221             6733 L  ( 6734)         T R     0910A       DL0357      46/46       L.Rumreich
+     CSE 2221             6734 B                   W F    0910A       BE0470      46/46       L.Rumreich (GR)
+
+     CSE 2221             7262 L  ( 7263)         T R     0910A       DL0264      39/40       S.Kustagishettar
+     CSE 2221             7263 B                   W F    0910A       BE0480      39/40       S.Kustagishettar (GR)
+
+     CSE 2221             6735 L  ( 6736)         T R     1020A       DL0357      46/46       P.Sivilotti
+     CSE 2221             6736 B                   W F    1020A       BE0470      46/46       P.Sivilotti (GR)
+
+     CSE 2221             6737 L  ( 6738)         T R     1130A       DL0357      42/42       N.Zweben
+     CSE 2221             6738 B                   W F    1130A       DL0280      42/42       N.Zweben (GR)
+
+     CSE 2221             7302 L  ( 7303)         T R     1130A       RA0059      40/40       B.Jeske
+     CSE 2221             7303 B                   W F    1130A       BE0480      40/40       B.Jeske (GR)
+
+     CSE 2221             6739 L  ( 6740)         T R     1240P       DL0357      43/42       N.Zweben
+     CSE 2221             6740 B                   W F    1240P       BE0470      43/42       N.Zweben (GR)
+
+     CSE 2221             6741 L  ( 6742)         T R     0150P       DL0357      42/42       N.Zweben
+     CSE 2221             6742 B                   W F    0150P       DL0280      42/42       N.Zweben (GR)
+
+     CSE 2221             6743 L  ( 6744)         T R     0300P       DL0357      46/46       D.Heym
+     CSE 2221             6744 B                   W F    0300P       BE0310      46/46       D.Heym (GR)
+
+     CSE 2221             7102 L  ( 7103)         T R     0520P       DL0357      46/46       S.Gomori
+     CSE 2221             7103 B                   W F    0520P       BE0310      46/46       S.Gomori (GR)
+
+     CSE 2221             7136 L  ( 7137)         T R     0630P       DL0357      45/46       S.Gomori
+     CSE 2221             7137 B                   W F    0630P       BE0310      45/46       S.Gomori (GR)
+
+     CSE 2221             7264 L  ( 7265)         T R     0410P       DL0357      43/46       D.Heym
+     CSE 2221             7265 B                   W F    0410P       BE0310      43/46       D.Heym (GR)
+
+     CSE 2221             7299 L  ( 7300)         T R     0410P       BE0188      39/40       J.Qiu
+     CSE 2221             7300 B                   W F    0410P       PO0155      39/40       J.Qiu (GR)
+
+     CSE 2221             7272 L  ( 7273)         T R     0150P       DL0113      41/40       R.Qiu
+                                            and   T R     0150P       DL0113                  
+                                            and     R     0150P       JR0300                  
+     CSE 2221             7273 B                   W F    0150P       PO0155      41/40       R.Qiu (GR)
+
+     CSE 2221             7376 L  ( 7377)         T R     0520P       CH0218      37/40       E.Goetz
+     CSE 2221             7377 B                   W F    0520P       PO0155      37/40       E.Goetz (GR)
+
+     CSE 2221             7425 L  ( 7426)         T R     0300P       BE0136      39/40       A.Alpay
+     CSE 2221             7426 B                   W F    0300P       PO0155      39/40       A.Alpay (GR)
+
+     CSE 2221            12205 L  (12206)         T R     0910A       SON0048     39/40       L.Frank
+     CSE 2221            12206 B                   W F    0910A       PO0155      39/40       L.Frank (GR)
+
+     CSE 2221            38085 L                  T R     0910A       UH0051      35/35       J.Qiu
+     CSE 2221            38086 B                   W F    0910A       DL0280      35/35       J.Qiu (GR)
+
+     CSE 2231             7107 L  ( 7108)          W F    0800A       DL0357      38/40       J.Morris
+     CSE 2231             7108 B                  T R     0800A       DL0280      38/40       J.Morris (GR)
+
+     CSE 2231             6745 L  ( 6746)          W F    0910A       DL0357      38/40       J.Morris
+     CSE 2231             6746 B                  T R     0910A       DL0280      38/40       J.Morris (GR)
+
+     CSE 2231             6747 L  ( 6748)          W F    1020A       DL0357      36/40       P.Bucci
+     CSE 2231             6748 B                  T R     1020A       DL0280      36/40       P.Bucci (GR)
+
+     CSE 2231             6749 L  ( 6750)          W F    1130A       DL0357      31/40       P.Bucci
+     CSE 2231             6750 B                  T R     1130A       DL0280      31/40       P.Bucci (GR)
+
+     CSE 2231             7109 L  ( 7110)          W F    1240P       DL0357      36/40       A.Grupa
+     CSE 2231             7110 B                  T R     1240P       DL0280      36/40       A.Grupa (GR)
+
+     CSE 2231             6751 L  ( 6752)          W F    0150P       DL0357      38/40       A.Grupa
+     CSE 2231             6752 B                  T R     0150P       DL0280      38/40       A.Grupa (GR)
+
+     CSE 2231             6753 L  ( 6754)          W F    0300P       DL0357      43/40       J.Grifski
+     CSE 2231             6754 B                  T R     0300P       DL0280      43/40       J.Grifski (GR)
+
+     CSE 2231             7146 L  ( 7147)          W F    0410P       DL0357      41/40       R.LaTour
+     CSE 2231             7147 B                  T R     0410P       DL0280      41/40       R.LaTour (GR)
+
+     CSE 2231             7381 L  ( 7383)          W F    0150P       CL0177      41/40       J.Grifski
+     CSE 2231             7383 B                  T R     0150P       PO0155      41/40       J.Grifski (GR)
+
+     CSE 2231             7382 L  ( 7384)          W F    1240P       CL0177      40/40       J.Grifski
+     CSE 2231             7384 B                  T R     1240P       PO0155      40/40       J.Grifski (GR)
+
+     CSE 2231             7472 L  ( 7473)          W F    1130A       MP2015      38/40       D.Zaccai
+     CSE 2231             7473 B                  T R     1130A       BE0480      38/40       D.Zaccai (GR)
+
+     CSE 2231            11735 L  (11751)          W F    0910A       JR0371      40/40       A.Grupa
+     CSE 2231            11751 B                  T R     0910A       BE0480      40/40       A.Grupa (GR)
+
+     CSE 2231            37768 L  (37769)          W F    1130A       SB0230      39/40       R.LaTour
+     CSE 2231            37769 B                  T R     1130A       PO0155      39/40       R.LaTour (GR)
+
+     CSE 2321             6755 L                 M W F    0910A       CH0312      36/45       C.Estill
+
+     CSE 2321             6758 L                 M W F    1240P       ONLINE      42/45       D.Close
+
+     CSE 2321             6756 L                 M W F    1020A       BE0198      44/45       C.Estill
+
+     CSE 2321             7150 L                 M W F    1130A       BE0198      38/45       D.Heym
+
+     CSE 2321             6757 L                 M W F    0150P       ONLINE      42/45       D.Close
+
+     CSE 2321             7111 L                 M W F    0300P       ONLINE      42/45       D.Close
+
+     CSE 2321             7261 L                 M W F    0150P       BE0198      44/45       C.Estill
+
+     CSE 2321             7448 L                 M W F    1240P       BE0188      40/45       A.AlilooeeDolatabad
+
+     CSE 2321            11737 L                 M W F    0410P       CL0120      29/40       C.Estill
+
+     CSE 2321            11738 L                 M W F    1020A       BE0180      42/45       A.AlilooeeDolatabad
+
+     CSE 2321            11739 L                  T R     1245P-0205  DL0369      41/40       T.Carpenter
+
+     CSE 2321            11740 L                  T R     0220P-0340  CH0218      46/45       T.Carpenter
+
+     CSE 2331             6759 L                 M W F    1130A       DB0080      50/50       N.Painter
+
+     CSE 2331             7215 L                 M W F    1240P       EC0311      63/60       N.Painter
+
+     CSE 2331             7274 L                 M W F    1020A       JR0270      68/70       R.Wenger
+
+     CSE 2331             7385 L                  T R     0355P-0515  DL0480      60/60       A.Rossi
+
+     CSE 2331             7386 L                 M W F    0150P       KN0190      50/50       A.AlilooeeDolatabad
+
+     CSE 2331            12341 L                  T R     0220P-0340  DL0480      59/60       A.Rossi
+
+     CSE 2331            37871 L                 M W F    0300P       PS0010      49/50       N.Painter
+
+     CSE 2421             7151 L                 M W      0530P-0720  BE0144      49/48       M.Abu Shattal
+
+     CSE 2421             7116 L                  TWRF    0910A       HI0306      47/48       N.Kirby
+
+     CSE 2421             7225 L                  T R     0530P-0720  BE0144      51/48       M.Abu Shattal
+
+     CSE 2421             7375 L                  TWRF    1020A       HI0306      42/48       J.Jones
+
+     CSE 2421             7449 L                  TWRF    1240P       HI0306      46/48       J.Jones
+
+     CSE 2421            11752 L                  TWRF    1130A       HI0306      48/48       N.Kirby
+
+     CSE 2421            12154 L                  TWRF    0150P       HI0306      44/48       J.Jones
+
+     CSE 2421            12643 L                  T R     0905A-1055  KN0190      49/50       J.Kelley
+
+     CSE 2421            37913 L                   W F    0905A-1055  DL0266      39/40       J.Kelley
+
+     CSE 2421            38075 L                  TWRF    1130A       DL0480      60/60       M.Kong Moreno
+
+     CSE 2431             6764 L                  T R     0935A-1055  DL0480      59/60       F.Qin
+
+     CSE 2431             6766 L                  T R     1110A-1230  EL2004      60/60       Y.Wang
+
+     CSE 2431             6767 L                  T R     0220P-0340  CH0240      62/60       Y.Wang
+
+     CSE 2431             7275 L                  T R     1245P-0205  CL0220      40/40       A.Champion
+
+     CSE 2431             7387 L                   W F    1245P-0205  CL0220      40/40       A.Baietto
+
+     CSE 2431             7450 L                   W F    1110A-1230  CL0220      40/40       J.Kelley
+
+     CSE 2431            12344 L                  T R     0935A-1055  BE0140      39/40       A.Champion
+
+     CSE 2451             6776 L                 M        0800A-1005  DL0357      14/40       T.Liang
+
+     CSE 2451            12346 L                 M        1020A-1225  DL0357      37/40       Z.Zhang
+
+     CSE 2501             7090 L                  T       0220P-0340  DL0317      30/30       W.Jones-Kline
+
+     CSE 2501             7713 L                  T R     1245P-0205  DL0317      15/10  +8   {7W2} M.Mallon
+
+     CSE 2501             7283 L                   W      0800A-0920  ML0131      25/30       B.Weaver
+
+     CSE 2501            37849 L                  T R     1245P-0205  DL0317      24/0        {7W1} M.Mallon
+
+     CSE 2501             7378 L                    R     0220P-0340  DL0317      27/30       G.Green
+
+     CSE 2501             7451 L                  T       1110A-1230  DL0305      28/30       B.Weaver
+
+     CSE 2501             7568 L                    R     1110A-1230  DL0305      29/30       G.Green
+
+     CSE 2501             7460 L                  T       0935A-1055  DL0305      30/30       B.Weaver
+
+     CSE 2501             7569 L                   W      0935A-1055  ML0131      29/30       B.Weaver
+
+     CSE 3231             7422 L                  T R     0530P-0650  CL0220      34/40       M.Teets
+
+     CSE 3231             7388 L                  T R     0355P-0515  CL0220      39/40       L.Phelps
+
+     CSE 3231             7695 L                  T R     0220P-0340  CL0220      40/40       L.Phelps
+
+     CSE 3231            12347 L                 M W      0600P-0720  DL0369      34/40       P.Kumar
+
+     CSE 3231            37966 L                 M W      1245P-0205  UH0056      36/35       R.Ramnath
+
+     CSE 3232             7253 L                  T R     0705P-0825  DL0369      14/40       A.AL-Baghdadi
+
+     CSE 3232             7389 L                 M W      0600P-0720  CL0177      23/40       J.Bentley
+
+     CSE 3232            11753 L                  T R     0600P-0720  DL0305      24/40       R.Roundtree
+
+     CSE 3232            12348 L                  T R     0220P-0340  SON0050     43/40       T.Bolwerk
+
+     CSE 3232            12925 L                  T R     1110A-1230  SON0050     41/40       T.Bolwerk
+
+     CSE 3241             7092 L                 M W      0800A-0920  DL0480      47/45       P.Wiksell
+
+     CSE 3241             7131 L                  T R     0530P-0650  DL0369      40/40       L.Chiu
+
+     CSE 3241             7152 L                  T R     1245P-0205  ONLINE      45/45       Z.Pichkar
+
+     CSE 3241             7222 L                  T R     0220P-0340  ONLINE      42/45       Z.Pichkar
+
+     CSE 3241             7331 L                  T R     1110A-1230  HI0035      45/45       L.Madrid
+
+     CSE 3241             7404 L                  T R     0355P-0515  SON0050     45/45       L.Madrid
+
+     CSE 3241             7452 L                  T R     0935A-1055  ONLINE      43/45       Z.Pichkar
+
+     CSE 3241            11754 L                   W F    1245P-0205  ONLINE      45/45       Z.Pichkar
+
+     CSE 3241            12447 L                   W F    0220P-0340  CL0220      38/40       L.Madrid
+
+     CSE 3241            37231 L                 M W      0355P-0515  ONLINE      45/45       J.Eden
+
+     CSE 3244             7394 L                  T R     1110A-1230  CL0120      41/40       S.Blanas
+
+     CSE 3244            12345 L                  T R     0220P-0340  OR0110      27/40       S.Byna
+
+     CSE 3321             6779 L                  T R     1110A-1230  ONLINE      38/40       D.Close
+
+     CSE 3341             6782 L                 M W F    1020A       BE0188      32/56       N.Soundarajan
+
+     CSE 3341             7280 L                  T R     1110A-1230  HI0031      58/60       M.Bond
+
+     CSE 3341             7390 L                 M W F    0300P       BE0188      37/40       T.Carpenter
+
+     CSE 3341             7427 L                 M W F    0410P       BE0180      35/35       T.Carpenter
+
+     CSE 3341             7453 L                 M W F    1130A       BE0188      41/56       N.Soundarajan
+
+     CSE 3341             7454 L                 M W F    1240P       SON0054     41/45       D.Zaccai
+
+     CSE 3421             6785 L                  T R     0935A-1055  PO0260      41/60       X.Zhang, D.Fan (TA)
+
+     CSE 3430             7243 L                 M W F    0220P-0340  KN0195      39/40       G.Green
+
+     CSE 3430             7455 L                 M W F    0935A-1055  HI0035      41/40       G.Green
+
+     CSE 3461             6788 L                 M W      0355P-0515  ONLINE      63/60       D.Ogle
+
+     CSE 3461             7141 L                  T R     1110A-1230  CZ0140      59/60       M.Zhang
+
+     CSE 3461             7159 L                 M W      0600P-0720  BE0180      44/45       J.Vickroy
+
+     CSE 3461             7371 L                  T R     0935A-1055  PS0010      60/60       M.Zhang
+
+     CSE 3461             7456 L                  T       1245P-0205  ONLINE      46/45       J.Montgomery
+                                            and     R     1245P-0205  BE0470                  
+
+     CSE 3461             7457 L                  T R     0220P-0340  PO0160      61/60       S.Bojja Venkatakrishnan
+
+     CSE 3521             6791 L                 M W F    1240P       BE0180      42/40       J.Barker
+
+     CSE 3521             7162 L                  T R     0700P-0820  BE0188      36/40       R.Ilin
+
+     CSE 3521             7391 L                   W F    0220P-0340  SOE0024     60/60       W.Chao
+
+     CSE 3521            11755 L                 M W F    1130A       BE0180      44/40       J.Barker
+
+     CSE 3521            12349 L                 M W F    0300P       BE0180      45/40       J.Barker
+
+     CSE 3521            37771 L                 M W      0935A-1055  DL0480      32/40       V.Sunder, S.Hussain
+
+     CSE 3541             6792 L                 M W F    0150P       DL0369      31/40       N.Shareef
+
+     CSE 3541             6793 L                 M W F    0300P       DL0369      27/40       N.Shareef
+
+     CSE 3541            12148 L                 M W F    1130A       BE0144      43/40       M.Boggus
+
+     CSE 3901             7304 L                 M W F    0910A       ONLINE      35/35       R.Joseph
+
+     CSE 3901             7112 L                  T R     0600P-0720  ONLINE      38/35       S.Sharkey
+
+     CSE 3901            11742 L                 M W      0530P-0650  BE0198      35/35       D.Williams
+
+     CSE 3901            35869 L                 M W F    1020A       CL0137      35/35       N.Shareef
+
+     CSE 3901            37875 L                 M W      0530P-0650  DL0266      36/35       D.Plautz
+
+     CSE 3902             7393 L                 M W F    0910A       DL0369      15/32       J.Holewinski
+
+     CSE 3902             6798 L                 M W F    1020A       CL0177      35/32       N.Kirby
+
+     CSE 3902             7153 L                 M W F    1240P       BE0198      31/32       M.Boggus
+
+     CSE 3902             7702 L                 M W F    0150P       DL0264      32/32       M.Boggus
+
+     CSE 3903            12350 L                  T R     0530P-0650  CL0177      15/35       C.Giles
+
+     CSE 4191             6804 L                                                   3/0        N.Strader (GR)
+
+     CSE 4191             7715 L                                                   2/0        {7W2} N.Strader (GR)
+
+     CSE 4251             6799 L                 M        0910A       BE0198      38/40       T.Li
+
+     CSE 4252             6800 L                 M        1020A       KN0195      32/40       S.Yang
+
+     CSE 4253             6801 L                 M        1240P       DL0357      37/40       S.Deshmukh
+
+     CSE 4256            11743 B                 M        0300P-0450  DL0280      38/40       A.Chun
+
+     CSE 4256             7458 B                 M        0520P-0710  DL0280      34/40       A.Chun
+
+     CSE 4471             6802 L                  T R     0935A-1055  CL0177      41/40       R.Kreml Jr
+
+     CSE 4471             6803 L                  T R     1245P-0205  BE0198      47/45       R.Kreml Jr
+
+     CSE 4471             7692 L                 M W      0600P-0720  CL0120      49/60       D.Dalton
+
+     CSE 4471            35871 L                  T R     0220P-0340  BE0198      44/45       R.Kreml Jr
+
+     CSE 5022             7117 L  ( 7118)         T R     0300P       DL0357       0/0        D.Heym
+     CSE 5022             7118 B                   W F    0300P       BE0310       0/0        D.Heym (GR)
+
+     CSE 5022             7165 L  ( 7166)         T R     1240P       DL0357       0/0        N.Zweben
+     CSE 5022             7166 B                   W F    1240P       BE0470       0/0        N.Zweben (GR)
+
+     CSE 5022             7711 L                  T R     0150P       DL0357       0/0        N.Zweben
+     CSE 5022             7712 B                   W F    0150P       DL0280       0/0        N.Zweben (GR)
+
+     CSE 5023             7119 L  ( 7120)          W F    0910A       DL0357       1/0        J.Morris
+     CSE 5023             7120 B                  T R     0910A       DL0280       1/0        J.Morris (GR)
+
+     CSE 5023             7167 L  ( 7168)          W F    0800A       DL0357       1/0        J.Morris
+     CSE 5023             7168 B                  T R     0800A       DL0280       1/0        J.Morris (GR)
+
+     CSE 5032             7370 L                 M W F    0910A       CH0312       1/0        C.Estill
+
+     CSE 5042             7169 L                 M W      0530P-0720  BE0144       0/0        M.Abu Shattal
+
+     CSE 5042            12113 L                  TWRF    0910A       HI0306       0/0        N.Kirby
+
+     CSE 5052             7277 L                  T R     1245P-0205  KN0250      54/59       M.Khaliligarekani
+     CSE 5052            12446 L                  T R     1245P-0205  KN0250       6/6        M.Khaliligarekani
+
+     CSE 5231             7424 L                  T R     0530P-0650  CL0220       0/0        M.Teets
+
+     CSE 5231             7407 L                  T R     0355P-0515  CL0220       0/0        L.Phelps
+
+     CSE 5231             7696 L                  T R     0220P-0340  CL0220       0/0        L.Phelps
+
+     CSE 5231             7423 L                  T R     0530P-0650  CL0220       0/0        M.Teets
+
+     CSE 5231             7408 L                  T R     0355P-0515  CL0220       0/0        L.Phelps
+
+     CSE 5231             7374 L                                      ONLINE       0/0        
+
+     CSE 5231             7697 L                  T R     0220P-0340  CL0220       0/3        L.Phelps
+
+     CSE 5231            12938 L                 M W      0600P-0720  DL0369       0/0        P.Kumar
+
+     CSE 5232             7254 L                  T R     0705P-0825  DL0369       0/0        A.AL-Baghdadi
+
+     CSE 5232             7409 L                 M W      0600P-0720  CL0177       0/0        J.Bentley
+
+     CSE 5232             7255 L                  T R     0705P-0825  DL0369       0/0        A.AL-Baghdadi
+
+     CSE 5232             7410 L                 M W      0600P-0720  CL0177       1/0        J.Bentley
+
+     CSE 5234             7401 L                                      ONLINE       0/0        
+
+     CSE 5236             6805 L                 M W F    1020A       DL0369      33/34       A.Champion
+
+     CSE 5236             7130 L                 M W F    1130A       DL0264      38/38       A.Champion
+
+     CSE 5236             6806 L                 M W F    1020A       DL0369       4/5        A.Champion
+
+     CSE 5236             7156 L                 M W F    1130A       DL0264       1/2        A.Champion
+
+     CSE 5239            37679 L                  T       0100P-0300               0/0        R.Ramnath
+     CSE 5239            37563 L                  T       0100P-0300               0/20       R.Ramnath
+
+     CSE 5241             7094 L                 M W      0800A-0920  DL0480       0/0        P.Wiksell
+
+     CSE 5241             7133 L                  T R     0530P-0650  DL0369       0/0        L.Chiu
+
+     CSE 5241             7158 L                  T R     1245P-0205  ONLINE       0/0        Z.Pichkar
+
+     CSE 5241             7163 L                   W F    0220P-0340  CL0220       0/0        L.Madrid
+
+     CSE 5241             7224 L                  T R     0220P-0340  ONLINE       0/0        Z.Pichkar
+
+     CSE 5241             7332 L                  T R     1110A-1230  HI0035       0/0        L.Madrid
+
+     CSE 5241             7405 L                  T R     0355P-0515  SON0050      0/0        L.Madrid
+
+     CSE 5241             7093 L                 M W      0800A-0920  DL0480       0/0        P.Wiksell
+
+     CSE 5241             7132 L                  T R     0530P-0650  DL0369       0/0        L.Chiu
+
+     CSE 5241             7157 L                  T R     1245P-0205  ONLINE       0/0        Z.Pichkar
+
+     CSE 5241             7164 L                   W F    0220P-0340  CL0220       0/0        L.Madrid
+
+     CSE 5241             7223 L                  T R     0220P-0340  ONLINE       0/0        Z.Pichkar
+
+     CSE 5241             7333 L                  T R     1110A-1230  HI0035       0/0        L.Madrid
+
+     CSE 5241             7406 L                  T R     0355P-0515  SON0050      0/0        L.Madrid
+
+     CSE 5243             7251 L                   W F    1245P-0205  TO0247      36/32       T.Bihari
+
+     CSE 5243             7323 L                   W F    0935A-1055  PS0010      36/35       H.Sun
+
+     CSE 5243             7403 L                  T R     0220P-0340  MP1015      37/35       P.Zhang
+
+     CSE 5243             7245 L                   W F    1245P-0205  TO0247      15/18       T.Bihari
+
+     CSE 5243             7325 L                   W F    0935A-1055  PS0010      15/25       H.Sun
+
+     CSE 5243             7395 L                  T R     0220P-0340  MP1015      17/20       P.Zhang
+
+     CSE 5249            37222 L                   W      0300P-0450  JR0239       1/0        A.Nandi
+
+     CSE 5249            37505 L                  T R     0220P-0340  DL0369       1/0        S.Parthasarathy
+
+     CSE 5249            37204 L                   W      0300P-0450  JR0239      14/30       A.Nandi
+
+     CSE 5249            37504 L                  T R     0220P-0340  DL0369      17/20       S.Parthasarathy
+
+     CSE 5321             6781 L                  T R     1110A-1230  ONLINE       0/0        D.Close
+     CSE 5321             6780 L                  T R     1110A-1230  ONLINE       1/0        D.Close
+
+     CSE 5331             6760 L                 M W F    0910A                    0/0        
+
+     CSE 5331             6761 L                 M W F    1130A       DB0080       0/0        N.Painter
+
+     CSE 5331             7216 L                 M W F    1240P       EC0311       0/0        N.Painter
+
+     CSE 5331             7278 L                 M W F    1020A       JR0270       0/0        R.Wenger
+
+     CSE 5331             7461 L                 M W F    0410P                    0/0        
+
+     CSE 5331             7698 L                  T R     0355P-0515  DL0480       0/0        A.Rossi
+
+     CSE 5331             7699 L                 M W F    0150P       KN0190       0/0        A.AlilooeeDolatabad
+
+     CSE 5331             6762 L                 M W F    0910A                    0/0        
+
+     CSE 5331             6763 L                 M W F    1130A       DB0080       0/0        N.Painter
+
+     CSE 5331             7217 L                 M W F    1240P       EC0311       0/0        N.Painter
+
+     CSE 5331             7279 L                 M W F    1020A       JR0270       2/0        R.Wenger
+
+     CSE 5331             7462 L                 M W F    0410P                    0/0        
+
+     CSE 5331             7700 L                  T R     0355P-0515  DL0480       0/0        A.Rossi
+
+     CSE 5331             7701 L                 M W F    0150P       KN0190       1/0        A.AlilooeeDolatabad
+
+     CSE 5331            38072 L                  T R     0220P-0340  DL0480       1/0        A.Rossi
+
+     CSE 5341             6784 L                 M W F    1020A       BE0188       0/0        N.Soundarajan
+
+     CSE 5341             7281 L                  T R     1110A-1230  HI0031       0/0        M.Bond
+
+     CSE 5341             7411 L                 M W F    0300P       BE0188       0/0        T.Carpenter
+
+     CSE 5341             7429 L                 M W F    0410P       BE0180       0/0        T.Carpenter
+
+     CSE 5341             6783 L                 M W F    1020A       BE0188       0/0        N.Soundarajan
+
+     CSE 5341             7282 L                  T R     1110A-1230  HI0031       0/0        M.Bond
+
+     CSE 5341             7412 L                 M W F    0300P       BE0188       0/0        T.Carpenter
+
+     CSE 5341             7428 L                 M W F    0410P       BE0180       2/5        T.Carpenter
+
+     CSE 5341            37969 L                 M W F    1240P       SON0054      0/0        D.Zaccai
+
+     CSE 5343            36536 L                  T R     1245P-0205  DL0264      11/15       A.Rountev
+     CSE 5343            36537 L                  T R     1245P-0205  DL0264      18/25       A.Rountev
+
+     CSE 5351            36538 L                  T R     0355P-0515  BE0144       5/10       T.Lai
+     CSE 5351            35950 L                  T R     0355P-0515  BE0144      16/30       T.Lai
+
+     CSE 5421             6787 L                  T R     0935A-1055  PO0260       0/0        X.Zhang
+     CSE 5421             6786 L                  T R     0935A-1055  PO0260       1/1        X.Zhang, D.Fan (GY)
+
+     CSE 5429            37164 L                 M W      1130A       BE0140       0/0        D.Panda
+     CSE 5429            37163 L                 M W      1130A       BE0140      15/30       D.Panda
+
+     CSE 5431             6768 L                  T R     0935A-1055  DL0480       0/0        F.Qin
+
+     CSE 5431             6769 L                  T R     0355P-0515               0/0        
+
+     CSE 5431             6770 L                  T R     1110A-1230  EL2004       1/0        Y.Wang
+
+     CSE 5431             6771 L                  T R     0220P-0340  CH0240       0/0        Y.Wang
+
+     CSE 5431             7284 L                  T R     1245P-0205  CL0220       0/0        A.Champion
+
+     CSE 5431             7430 L                   W F    1245P-0205  CL0220       0/0        A.Baietto
+
+     CSE 5431             7690 L                   W F    1110A-1230  CL0220       0/0        J.Kelley
+
+     CSE 5431             6772 L                  T R     0935A-1055  DL0480       0/0        F.Qin
+
+     CSE 5431             6773 L                  T R     0355P-0515               0/0        
+
+     CSE 5431             6774 L                  T R     1110A-1230  EL2004       0/0        Y.Wang
+
+     CSE 5431             6775 L                  T R     0220P-0340  CH0240       0/0        Y.Wang
+
+     CSE 5431             7285 L                  T R     1245P-0205  CL0220       0/0        A.Champion
+
+     CSE 5431             7431 L                   W F    1245P-0205  CL0220       0/0        A.Baietto
+
+     CSE 5431             7691 L                   W F    1110A-1230  CL0220       0/0        J.Kelley
+
+     CSE 5441             7154 L                  T R     1110A-1230  HC0250      17/25       H.Subramoni
+     CSE 5441             7155 L                  T R     1110A-1230  HC0250      17/35       H.Subramoni
+
+     CSE 5461             6790 L                 M W      0355P-0515  ONLINE       0/0        D.Ogle
+
+     CSE 5461             7143 L                  T R     1110A-1230  CZ0140       0/0        M.Zhang
+
+     CSE 5461             7160 L                 M W      0600P-0720  BE0180       0/0        J.Vickroy
+
+     CSE 5461             7372 L                  T R     0935A-1055  PS0010       0/0        M.Zhang
+
+     CSE 5461             7686 L                  T       1245P-0205  ONLINE       0/0        J.Montgomery
+                                            and     R     1245P-0205  BE0470                  
+
+     CSE 5461             7687 L                  T R     0220P-0340  PO0160       0/0        S.Bojja Venkatakrishnan
+
+     CSE 5461             6789 L                 M W      0355P-0515  ONLINE       0/0        D.Ogle
+
+     CSE 5461             7142 L                  T R     1110A-1230  CZ0140       0/0        M.Zhang
+
+     CSE 5461             7161 L                 M W      0600P-0720  BE0180       0/0        J.Vickroy
+
+     CSE 5461             7373 L                  T R     0935A-1055  PS0010       0/0        M.Zhang
+
+     CSE 5461             7688 L                  T       1245P-0205  ONLINE       0/0        J.Montgomery
+                                            and     R     1245P-0205  BE0470                  
+
+     CSE 5461             7689 L                  T R     0220P-0340  PO0160       0/0        S.Bojja Venkatakrishnan
+
+     CSE 5462             7329 L                  T R     0355P-0515  ONLINE      23/21       D.Ogle
+     CSE 5462             7328 L                  T R     0355P-0515  ONLINE      12/23       D.Ogle
+
+     CSE 5463            12487 L                  T R     0355P-0515  DL0369       3/5        J.Liu
+     CSE 5463            12486 L                  T R     0355P-0515  DL0369       5/12       J.Liu
+
+     CSE 5471            11963 L                 M W F    1130A       ONLINE      28/29       I.Eryilmaz
+     CSE 5471            11962 L                 M W F    1130A       ONLINE      34/35       I.Eryilmaz
+
+     CSE 5471            37808 L                 M W F    1130A       ONLINE       0/0        
+
+     CSE 5472            37233 L                  T R     1245P-0205  BE0144      13/20       C.Yagemann
+     CSE 5472            35953 L                  T R     1245P-0205  BE0144       4/10       C.Yagemann
+
+     CSE 5473            37232 L                  T R     1110A-1230  BE0144      17/20       S.Bojja Venkatakrishnan
+     CSE 5473            35954 L                  T R     1110A-1230  BE0144      10/20       S.Bojja Venkatakrishnan
+
+     CSE 5474            11757 L                  T R     1245P-0205  JR0270      14/25       Z.LIN
+     CSE 5474            12076 L                  T R     1245P-0205  JR0270       9/15       Z.LIN
+
+     CSE 5501             7091 L                  T       0220P-0340  DL0317       1/0        W.Jones-Kline
+
+     CSE 5501             7260 L                  T       0220P-0340  DL0317       0/0        W.Jones-Kline
+
+     CSE 5501             7714 L                  T R     1245P-0205  DL0317       0/0        {7W2} M.Mallon
+
+     CSE 5501             7301 L                   W      0800A-0920  ML0131       0/0        B.Weaver
+
+     CSE 5501            12135 L                  T       0935A-1055  DL0305       0/0        B.Weaver
+
+     CSE 5501            12136 L                   W      0935A-1055  ML0131       0/0        B.Weaver
+
+     CSE 5523             7259 L                  T R     0220P-0340  KN0190      34/37       X.Zhang
+
+     CSE 5523             7286 L                  T R     1245P-0205  KN0190      29/40       Z.Zhu
+
+     CSE 5523             7258 L                  T R     0220P-0340  KN0190      19/23       X.Zhang
+
+     CSE 5523             7287 L                  T R     1245P-0205  KN0190       8/20       Z.Zhu
+
+     CSE 5524            12146 L                  T R     1245P-0205  HI0031      30/32       J.Barker
+     CSE 5524            12147 L                  T R     1245P-0205  HI0031      11/13       J.Barker
+
+     CSE 5525            37177 L                   W F    0220P-0340  DE0214      23/25       C.Brew
+     CSE 5525            35955 L                   W F    0220P-0340  DE0214      16/25       C.Brew
+
+     CSE 5526             7327 L                  T R     0935A-1055  BE0120      42/40       D.Williamson
+     CSE 5526             7326 L                  T R     0935A-1055  BE0120      16/20       D.Williamson
+
+     CSE 5539            37174 L                   W      1130A-0135  EC0322      11/15       D.Hirsch
+
+     CSE 5539            37184 L                 M        1020A-1225  CL0120       2/0        X.Zhang
+
+     CSE 5539            37196 L                    R     1240P-0230  BE0130       3/0        A.Perrault
+
+     CSE 5539            37173 L                   W      1130A-0135  EC0322       5/15       D.Hirsch
+
+     CSE 5539            37183 L                 M        1020A-1225  CL0120      10/20       X.Zhang
+
+     CSE 5539            37195 L                    R     1240P-0230  BE0130      21/25       A.Perrault
+
+     CSE 5541             6796 L                 M W F    0150P       DL0369       0/0        N.Shareef
+
+     CSE 5541             6797 L                 M W F    0300P       DL0369       0/0        N.Shareef
+
+     CSE 5541             6794 L                 M W F    0150P       DL0369       0/0        N.Shareef
+
+     CSE 5541             6795 L                 M W F    0300P       DL0369       0/0        N.Shareef
+
+     CSE 5542            12428 L                  T R     0220P-0340  HC0250      13/20       J.Chen
+     CSE 5542            12427 L                  T R     0220P-0340  HC0250       3/20       J.Chen
+
+     CSE 5544             7250 L                  T R     1110A-1230  CH0240      18/20       J.Chen
+     CSE 5544             7248 L                  T R     1110A-1230  CH0240      28/40       J.Chen
+
+     CSE 5545            37103 L                  T R     0935A-1055  DL0266       9/10       H.Shen
+     CSE 5545            37102 L                  T R     0935A-1055  DL0266      19/30       H.Shen
+
+     CSE 5891            37434 S                                                   0/0        
+
+     CSE 5911             6807 L                  T R     0530P-0650  DL0266      31/32       J.Bishop
+
+     CSE 5911             6810 L                   W F    0935A-1055  MP2019      34/32       T.Bihari
+
+     CSE 5911             7096 L                 M W      0530P-0650  DL0357      32/32       D.Woods
+
+     CSE 5911             7221 L                 M W      0705P-0825  DL0357      11/32       D.Woods
+
+     CSE 5911             6808 L                  T R     0530P-0650  DL0266       0/0        J.Bishop
+
+     CSE 5911             6809 L                   W F    0935A-1055  MP2019       0/0        T.Bihari
+
+     CSE 5911             7095 L                 M W      0530P-0650  DL0357       0/0        D.Woods
+
+     CSE 5911             7220 L                 M W      0705P-0825  DL0357       0/0        D.Woods
+
+     CSE 5912             6811 L                  TWRF    1020A       DL0317      36/32       R.Crawfis
+     CSE 5912             6812 L                  TWRF    1020A       DL0317       0/0        R.Crawfis
+
+     CSE 5914             7290 L                  T R     0400P-0520  CL0177      33/0        S.Vernier
+
+     CSE 5914             7257 L                 M W      0935A-1055  PO0161      21/0        J.Fosler-Lussier
+
+     CSE 5914             7685 L                  T R     0220P-0340  DL0305      34/0        S.Vernier
+
+     CSE 5914            11756 L                  T R     1245P-0205  MP1008      34/0        S.Vernier
+
+     CSE 5914             7289 L                  T R     0400P-0520  CL0177       0/0        S.Vernier
+
+     CSE 5914             7256 L                 M W      0935A-1055  PO0161       0/0        J.Fosler-Lussier
+
+     CSE 5914            11964 L                  T R     0220P-0340  DL0305       0/0        S.Vernier
+
+     CSE 5914            11965 L                  T R     1245P-0205  MP1008       0/0        S.Vernier
+
+     CSE 5915             7098 L                  T R     0600P-0720  CL0133      18/27       S.Jayanti
+
+     CSE 5915             7402 L                  T R     0600P-0720  CL0137      23/27       P.Kumar
+
+     CSE 5915            36703 L                  T R     1110A-1230               4/0        
+
+     CSE 5915             7097 L                  T R     0600P-0720  CL0133       0/5        S.Jayanti
+
+     CSE 5915             7396 L                  T R     0600P-0720  CL0137       0/5        P.Kumar
+
+     CSE 5916            11889 L                 M W      1110A-1230  PO0161      20/22       R.Ramnath
+     CSE 5916            11888 L                 M W      1110A-1230  PO0161       9/10       R.Ramnath
+
+     CSE 6249            12361 L                                                   6/20       P.Zhang
+
+     CSE 6321            11741 L                  T R     0220P-0340  BE0140      13/40       P.Hatami
+
+     CSE 6331             7242 L                  T R     1245P-0205  CL0120      60/56       T.Lai
+
+     CSE 6341             7291 L                  T R     0935A-1055  CL0120      37/45       A.Rountev
+
+     CSE 6429             7099 L                                                  10/25       D.Panda (GR)
+
+     CSE 6429             7101 L                                                   2/25       M.Teodorescu (GR)
+
+     CSE 6431             7276 L                  T R     1110A-1230  SOE0040     25/45       T.Zhu
+
+     CSE 6469             7128 L                 M        1240P       DL0298       2/25       A.Arora (GR)
+
+     CSE 6520            37155 L                  T R     0935A-1055  KN0195      16/40       A.AlilooeeDolatabad
+
+     CSE 6539             7708 L                                                   7/30       D.Wang (GR)
+
+     CSE 6559             7100 L                     F    0245P-0430               8/25       H.Shen (GR)
+
+     CSE 6559            12443 L                                                   1/25       J.Chen (GR)
+
+     CSE 2111       LMA   7271 L                  T       0800A-0925  GA0451      20/24       N.Roman
+                                            and     R     0800A-0925  ONLINE                  
+
+     CSE 2221       LMA   7145 L                  T R     1010A-1200  GA0451      10/24       N.Roman
+
+     CSE 1222       MNS   7463 L                 M WR     0920A       OV0458      19/30       W.Li
+
+     CSE 2111       MNS   7464 L                 M        0945A-1115  CN0239      22/24       A.Rader
+     CSE 2111       MNS   7465 B  ( 7464)          W      0945A-1135  CN0120A     22/24       A.Rader
+
+     CSE 1222       MRN  11686 L                 M W F    0920A       MSE0240     21/24       N.Mansouri
+
+     CSE 2111       MRN   6708 B                     F    0130P-0320  MSE0240     21/24       A.Annasiwatta
+     CSE 2111       MRN   7288 L                 M W      0130P       MSE0245     21/24       A.Annasiwatta
+
+     CSE 2221       MRN   6709 L                 M W      0130P-0320  MSE0240     23/24       G.Mirzaei
+
+     CSE 2231       MRN  12375 L                 M W      0330P-0520  MSE0240      6/24       G.Mirzaei
+
+     CSE 2321       MRN  12374 L                 M W      1100A-1220  MSE0240      8/24       G.Mirzaei
+
+     CSE 1111       NWK  12484 L                 M W      1245P-0205  RS0206      21/24       E.Gamova
+
+     CSE 1222       NWK   7240 L                  T R     0800A-0920  RS0206      14/24       F.Crowner
+
+     CSE 1223       NWK   7466 L                  T R     1020A-1210  RS0206      19/24       F.Crowner
+
+     CSE 2111       NWK   6710 L                  T R     0305P-0455  RS0206      22/24       F.Crowner
+
+     CSE 2111       NWK   6711 L                  T R     1245P-0235  RS0206      20/24       F.Crowner
+
+
+INDependent study classes ---   2193       4193       4998       4998H      4999       4999H      6193       6193/7W2   6998       6998/7W2   6999       8998       8998/7W2   8999       
+
+J.Armstrong                                7474=9                                                                                                                                       
+A.Arora                                    6815       6885=1     7573       6922       7628       6852                  6958=2     7179       6992+      7059=1                7026=3   
+K.Athreya                                  6841       6911       7574       6948       7629       6875=1                6981       7201       7015       7080=4                7049     
+S.Atiq                                     7475       7486=3     7575       7498=1     7630       7342                  7522=1     7532       7356=1                                    
+R.Bassily                                  7334=1     7336       7576       7338       7631       7340=1                7344       7345       7354       7362=1                7364=1   
+T.Berger-Wolf                              6816       6886       7577       6923       7632       6853       7520=2     6959=2     7180       6993       7060=4     7554=1     7027     
+T.Bihari                                   7476       7487       7578       7499       7633       7343                  7523=3     7533       7357                                      
+S.Blanas                                   7129       7121       7579       7122       7634       7123=3                7124       7181       7125       7126                  7127     
+M.Boggus                                   7292=1     7493      12491       7505       7678       7516=1                7531       7540       7546                                      
+S.Bojja Venkatakrishnan                    7703=2     7704       7705       7706       7674=1     7707                  7529       7542       7543       7320=2                7369     
+M.Bond                                     6817=1     6887       7580       6924       7635       6854                  6960       7182       6994       7061=2                7028     
+P.Bucci                                    6818       6888                  6925                  6855                                                                                  
+S.Byna                                     6826       6896       7590       6933       7645       6862                  6968       7437       7002       7067=5                7036     
+W.Chao                                     7477=6     7488       7581       7500       7636       7511=4                7524       7534       7361       7317=7                7366     
+J.Chen                                     7335       7337       7582       7339       7637       7341=1     7518=1     7346       7347       7355       7363=4                7365     
+B.Choi                                     7293       7296       7583       7298       7638       7307                  6962       7308       6996       7063                  7030     
+R.Crawfis                                  6820       6890       7584       6927       7639       6857                  6963       7184       6997       7064=1                7031     
+J.Davis                                    6821       6891       7585       6928       7640       6858                  6964       7185       6998       7065=5                7032=1   
+J.Fosler-Lussier                           6822       6892       7586       6929       7641       6859                  6965=2     7186       6999       7066=3    12595=1     7033     
+H.Guo                                      6823       6893      12492       7506       7677       7517=1                7528=1     7539      12580      12209                  7034=1   
+Z.Guo                                      6824       6894      12493      12509      12523       6860=1                7350       7538      12581      12210=1                7035     
+P.Hatami                                   7478       7489       7587       7501       7642       7512=2                7525=1     7535       7358       7318                  7367     
+D.Hirsch                                   6825       6895      12494       6930      12524       6861                  7349       7353       7000      12596                  7558     
+J.Kelley                                   7294       6913      12495       6931      12525       7322=1                7348       7352       7001                                      
+M.Khaliligarekani                                                                                                                                                  36688=1              
+M.Kong Moreno                              6843+6     6917      12496       6932      12526      12540=2                6966       7187      12582      12597=1                7559     
+Z.LIN                                      7413       7414       7589       7415       7644       7416                  7417=1     7418       7419=1     7553+10               7421=1   
+T.Lai                                      6827       6897       7588       6934       7643       6863                  6969       7189       7003       7068                  7037     
+R.Machiraju                                6828       6898       7591       6935       7646       6864=1                6970=1     7190       7004=1     7069=1                7038=1   
+R.Memoli Techera                           7232       7233       7592       7234       7647       7235                  7236                  7237       7238                  7239     
+G.Mirzaei                       7324                 11699=2                                                                                 37925=2                                    
+J.Morris                                   6829       6899       7593       6936       7648       7267                  7268       7269       7270                                      
+A.Nandi                                    6830       6900       7594       6937       7649       6865                  6971=2     7191       7005       7070=2                7039     
+X.Ning                                     7441       7442       7595       7443       7650=1     7444=2                7445       7446       7447      12598=4               12610     
+N.Painter                                  6847=1    12459      12497      12510      12527      12541                  6967       7188      12583                                      
+D.Panda                                    6831       6901       7596       6938       7651       6866                  6972       7192       7006=1     7071=13   12594=1     7040=1   
+I.Paparrizos                               7482      12460=6    12498=1    12511      12528      12542                 12554=5    12561      12584      12599=4               12611=1   
+S.Parthasarathy                            6832       6902       7597       6939       7652       6867=1     7519=1     6973=2     7193       7007       7072=2     7555=1     7041=3   
+A.Perrault                                 7481       7492       7620       7504       7676       7515                  7530=1     7541       7545       7321=8                7556     
+F.Qin                                      6833       6903       7598       6940       7653       6868                  6974       7194       7008       7073=1                7042=1   
+R.Ramnath                                  6834       6904       7599       6941       7654       6869=4     7521=1     6975=16    7144=2     7009       7074=7    36687=2     7043=1   
+A.Rountev                                  6835       6905       7601       6942       7656       6870=1                6976       7196       7010       7075=2                7044     
+G.Ryslik                                  12103       7170       7600       7171       7655       7172                  7173=1     7195       7174                                      
+N.Shareef                                  6836       6906                  6943                                                                                                        
+H.Shen                                     6837       6907       7602       6944       7657       6871                  6977=1     7197       7011       7076=10               7045=1   
+N.Shroff                                   6838       6908       7603       6945       7658       6872                  6978       7198       7012       7077=1                7046     
+P.Sivilotti                                6839       6909=1     7604       6946       7659       6873                  6979       7199       7013       7078=1                7047     
+N.Soundarajan                             12451      12461=1     7607=1     6950=1     7662       6877=1                6983       7203       7017      12600                 12612     
+C.Stewart                                  6842       6912       7605       6949       7660       6876=1                6982       7202       7016       7081=3                7050     
+N.Strader                       7266                                                                                                                                                    
+Y.Su                                       7480       7491       7619       7503       7675       7513                  7526=1     7536       7359       7319=9                7368=1   
+H.Subramoni                               12452      12462       7612       6954       7667       6881=1                6987=1     7207       7021=1     7082                  7051     
+H.Sun                                      7295       7297       7606       7305       7661       7309                  7310       7311       7312       7313=9                7314     
+M.Teodorescu                               6844       6914       7608       6951       7663       6878                  6984       7204       7018=1     7083=3                7052     
+D.Wang                                     6845       6915       7609       6952       7664       6879                  6985       7205       7019       7084=5                7053=2   
+H.Wang                                     6846       6916       7610       6953       7665       6880                  6986       7206       7020       7085                  7054     
+Y.Wang                                     7213       7214=1     7611       7218       7666       7219=1                7226       7227       7228       7552+5                7230     
+R.Wenger                                   6849       6919       7613       6955       7668       6882                  6988       7208       7022       7086                  7055     
+D.Williamson                              12453      12463      12499      12512      12529      12543=2               12555      12562      12585      12601=6               12613     
+C.Yagemann                                12454      12464      12500      12513      12530      12544=2               12556=3    12563      12586      12602=5               12614=1   
+A.Yener                                    6848       6918       7614       7306       7669       7138                  7139       7209       7140=1     7316=1                7315     
+D.Zaccai                                  12455      12465      12501      12514      12531      12545                 12557      12564      12587                                      
+M.Zhang                                   12456      12466      12502      12515      12532      12546=2               12558      12565      12588=1    12603=2               12615     
+P.Zhang                                    7479       7490       7616       7502       7671       7514=1                7527=1     7537       7360=1    12208=3                7557=2   
+X.Zhang                                    6851       6921       7617       6957       7672       6884=1                6990       7211       7024       7088=2                7057     
+X.Zhang                                    7176       7177       7618       7178       7673       7175                  6991=1     7212       7025       7089=2                7058     
+T.Zhu                                     12457      12467      12503      12516      12533      12547=1               12559=1    12566      12589      12604                 12616     
+Z.Zhu                                     12458      12468=1    12504      12517      12534      12548=1               12560      12567      12590      12605=4               12617     
+
+    -------------------------   2193       4193       4998       4998H      4999       4999H      6193       6193/7W2   6998       6998/7W2   6999       8998       8998/7W2   8999       
+
++ = multiple classes with same instructor, only one is shown
+
+
+waitlist report:
+
+     CSE 2501               8
