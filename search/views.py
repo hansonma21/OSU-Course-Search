@@ -52,11 +52,12 @@ def index(request):
             instructor = myFilter.data.get('instructor', '')
 
             # get the term name from the term id
+            term_name = ''
             if term != '':
                 try:
                     term_name = Term.objects.get(id=term).name
                 except Exception as E:
-                    term_name = None
+                    term_name = ''
             
             # create a Search_Query object to store the search parameters
             search_query = {
