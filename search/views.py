@@ -44,28 +44,30 @@ def index(request):
     """View for index page, will display search form and search results"""
 
     def save_query(myFilter: Course_SectionFilter):
-        # obtain each of the values from myFilter
-        term = myFilter.data.get('term', None)
-        subject = myFilter.data.get('subject', None)
-        number = myFilter.data.get('number', None)
-        instructor = myFilter.data.get('instructor', None)
-
-        # get the term name from the term id
-        if term is not None:
-            try:
-                term_name = Term.objects.get(id=term).name
-            except Term.DoesNotExist:
-                term_name = None
-        
-        # create a Search_Query object to store the search parameters
-        search_query = {
-            "term": term_name,
-            "subject": subject,
-            "number": number,
-            "instructor": instructor
-        }
-        
         try:
+            # obtain each of the values from myFilter
+            term = myFilter.data.get('term', '')
+            subject = myFilter.data.get('subject', '')
+            number = myFilter.data.get('number', '')
+            instructor = myFilter.data.get('instructor', '')
+
+            # get the term name from the term id
+            term_name = ''
+            if term != '':
+                try:
+                    term_name = Term.objects.get(id=term).name
+                except Exception as E:
+                    term_name = ''
+            
+            # create a Search_Query object to store the search parameters
+            search_query = {
+                "term": term_name,
+                "subject": subject,
+                "number": number,
+                "instructor": instructor
+            }
+        
+        
             new_search_query = Search_Query.objects.create(search_query=search_query)
             new_search_query.save()
         except Exception as E:
