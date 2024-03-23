@@ -645,6 +645,35 @@ def update_next_section(task):
                                 schedule_type=Schedule.ONCE, 
                                 hook=task.hook)
 
+def schedule_all_update_sections(term=None, start_at=None):
+    """Schedules all the update_sections tasks for all departments and terms"""
+
+    if start_at is not None:
+        if not Department.objects.filter(short_name=start_at).exists():
+            raise Exception("Department does not exist in database")
+        
+        departments = Department.objects.filter(short_name__gte=start_at).order_by('short_name')
+    else:
+        departments = Department.objects.all().order_by('short_name')
+
+    if term is not None:
+        if not Term.objects.filter(osu_id=term).exists():
+            raise Exception("Term does not exist in database")
+        
+        terms = Term.objects.filter(osu_id=term)
+    else:
+        terms = Term.objects.filter(display_boolean=True)
+
+
+    for term_ in terms.iterator():
+        for department in departments.iterator():
+            schedule_name = '{}_{}_auto'.format(department, term)
+            kwargs = {'term': term, 'department': department.short_name}
+
+            Schedule.objects.create(name=schedule_name, 
+                                    func='search.tasks.update_sections', 
+                                    kwargs=kwargs, 
+                                    schedule_type=Schedule.ONCE)
 
 
 def update_instructors():
