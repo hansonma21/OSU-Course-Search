@@ -667,8 +667,8 @@ def schedule_all_update_sections(term=None, start_at=None):
 
     for term_ in terms.iterator():
         for department in departments.iterator():
-            schedule_name = '{}_{}_auto'.format(department, term)
-            kwargs = {'term': term, 'department': department.short_name}
+            schedule_name = '{}_{}_auto'.format(department.short_name, term_.osu_id)
+            kwargs = {'term': term_.osu_id, 'department': department.short_name}
 
             Schedule.objects.create(name=schedule_name, 
                                     func='search.tasks.update_sections', 
