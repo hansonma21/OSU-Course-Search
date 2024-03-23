@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.prod
+    restart: always
     command: gunicorn osu_course_search.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/staticfiles
@@ -16,6 +17,7 @@ services:
       - db
   db:
     image: postgres:15
+    restart: always
     volumes:
       - ./data/postgres_data:/var/lib/postgresql/data/
     env_file:
@@ -37,6 +39,7 @@ services:
       - web
   acme-companion:
     image: nginxproxy/acme-companion
+    restart: always
     env_file:
       - ./.env.prod.proxy-companion
     volumes:
@@ -49,6 +52,7 @@ services:
       - nginx-proxy
   django-q:
     build: .
+    restart: always
     command: python manage.py qcluster
     env_file:
       - ./.env.prod
@@ -58,10 +62,12 @@ services:
       - web
   redis:
     image: redis:alpine
+    restart: always
     ports:
       - 6379:6379
   selenium:
     image: selenium/standalone-chrome:latest
+    restart: always
     volumes:
       - /dev/shm:/dev/shm
 
