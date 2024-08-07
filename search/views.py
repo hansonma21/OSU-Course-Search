@@ -97,7 +97,7 @@ def index(request):
 
                 course_dict = {}
                 for course in courses:
-                    course_sections_for_course = course_sections.filter(course=course)
+                    course_sections_for_course = course_sections.filter(course=course).distinct()
                     # group the course_sections_for_course by link_number
                     course_dict[course] = {}
                     for section in course_sections_for_course:
@@ -116,6 +116,12 @@ def index(request):
         # if the user has not submitted the form, create an empty filter instance
         myFilter = Course_SectionFilter(request.GET)
         return render(request, "search/index.html", context={"myFilter": myFilter})
+
+def learn_more_view(request):
+    return render(request, "search/learn_more.html")
+
+def news_view(request):
+    return render(request, "search/news.html")
 
 # def search(request):
 #     if request.method == "POST":
