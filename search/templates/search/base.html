@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSU Course Search</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'search/images/favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Add custom styles for sticky navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            padding: 10px 10px 0px 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    
+    <header class="bg-red-600 text-white py-4 sticky-nav">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="{% url 'search:index' %}" class="text-xl font-semibold">OSU Course Search</a>
+            <ul class="flex space-x-4">
+                <li><a href="{% url 'search:index' %}" class="hover:underline">Home</a></li>
+                <li><a href="{% url 'search:learn_more' %}" class="hover:underline">Learn More</a></li>
+                {% comment %} <li><a href="{% url 'tourney_reg:registration' %}" class="hover:underline">Event Registration</a></li> {% endcomment %}
+                <li><a href="{% url 'search:news' %}" class="hover:underline">News</a></li>
+                {% comment %} {% if user.is_authenticated %}
+                    <li><a href="{% url 'tourney_profiles:profile' %}" class="hover:underline">Profile</a></li>
+                    {% if user.profile.is_judge %}
+                        <li><a href="{% url 'tourney_scoring:dashboard' %}" class="hover:underline">Judging Dashboard</a></li>
+                    {% endif %}
+                    <form class="logout-link" action="{% url 'tourney_profiles:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="hover:underline" type="submit">Log Out</button>
+                    </form>
+                {% else %}
+                    <li><a href="{% url 'tourney_profiles:signup' %}" class="hover:underline">Sign Up</a></li>
+                    <li><a href="{% url 'tourney_profiles:login' %}" class="hover:underline">Log In</a></li>
+                {% endif %} {% endcomment %}
+            </ul>
+        </nav>
+    </header>
+
+    {% block additional_header %}
+    {% endblock %}
+    
+
+    <main class="container mx-auto py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer id="footer" class="bg-gray-200 text-gray-600 py-4">
+        <p class="text-center">© 2024 Hanson Ma. All rights reserved.</p>
+    </footer>
+</body>
+</html>
