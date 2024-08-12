@@ -1,6 +1,44 @@
 {% extends 'search/base.html' %}
 
 {% block content %}
-    <h1>Learn More</h1>
-    <p>This is a simple Django web application that allows users to search for courses at Ohio State University. The application is built using Django, a high-level Python web framework, and SQLite, a lightweight database engine. The application is hosted on Heroku, a cloud platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.</p>
+<section class="mb-8">
+    <h2 class="text-3xl font-semibold">General Information</h2>
+    <p class="text-lg text-gray-600">
+        This website is meant to be used as a tool for discovering your instructors when you are scheduling your classes for the upcoming semester. 
+    </p>
+    <p class="text-lg text-gray-600">Contact: </p>
+</section>
+
+<section class="mb-8">
+    <h2 class="text-3xl font-semibold">Important Information</h2>
+    <ul class="list-disc pl-6">
+        <li class="text-lg text-gray-600">Updates to the search results are conducted on a daily/weekly basis (depending on traffic to the website and semester scheduling timing)</li>
+        <li class="text-lg text-gray-600">Data is obtained from public OSU course search results and aggregated appropriately to reflect which instructors are attached to which sections (even if visibly says "To be announced")</li>
+        <li class="text-lg text-gray-600">Any sections listed as "UNKNOWN" means that either the instructor attached to that section is not in the website's database or there fundamentally is no data available on the instructor of that section</li>
+    </ul>
+</section>
+
+<section class="mb-8">
+    <h2 class="text-3xl font-semibold">Usage</h2>
+    <p class="text-lg text-gray-600">
+        You may may search the website by instructor name or course number or both.
+    </p>
+    <ul class="list-disc pl-6">
+        <li class="text-lg text-gray-600">
+            For every query, you must select a semester to search for.
+        </li>
+        <li class="text-lg text-gray-600">
+            After selecting a semester, you may select a subject and a course number to find out which instructors are teaching which sections of that course.
+        </li>
+        <li class="text-lg text-gray-600">
+            If you are looking for a specific instructor, you may search by their name (by first name, last name, full name, or partial name - case insensitive) to find out which courses and sections they are teaching.
+        </li>
+        <li class="text-lg text-gray-600">
+            You may further narrow down your search results by selecting the subject, course number, and instructor name.
+        </li>
+        <li class="text-lg text-gray-600">
+            Valid search query: "CSE 2421" or "CSE 2421 and LaTour" or "CSE 2421" and "Rob LaTour" for term AU24
+        </li>
+    </ul>
+</section>
 {% endblock %}

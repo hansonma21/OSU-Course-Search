@@ -1,6 +1,21 @@
 {% extends 'search/base.html' %}
 
 {% block content %}
-    <h1>Learn More</h1>
-    <p>This is a simple Django web application that allows users to search for courses at Oregon State University. The application is built using Django, a high-level Python web framework, and SQLite, a lightweight database engine. The application is hosted on Heroku, a cloud platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.</p>
+<section class="mb-12">
+    <h2 class="text-xl font-semibold mb-4">Latest News</h2>
+    {% if news %}
+
+        {% for item in news %}
+            <div class="bg-white p-4 rounded-lg shadow-md mt-4">
+                <h3 class="text-lg font-semibold">{{ item.title }}</h3>
+                <h2 class="text-gray-400">{{ item.date_posted }}</h2>
+                <p class="text-gray-600">{{ item.content }}</p>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p class="text-gray-600">No news updates at this time.</p>
+    {% endif %}
+
+</section>
 {% endblock %}
