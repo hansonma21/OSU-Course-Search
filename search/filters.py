@@ -18,7 +18,19 @@ class Course_SectionFilter(django_filters.FilterSet):
     #     # at startup user doen't push Submit button, and QueryDict (in data) is empty
     #     if self.data == {}:
     #         self.queryset = self.queryset.none()
-    
+
+    def __init__(self, *args, **kwargs):
+        super(Course_SectionFilter, self).__init__(*args, **kwargs)
+        self.filters['term'].field.empty_label = 'Select Term'
+        self.filters['subject'].field.empty_label = 'Select Subject'
+        self.filters['number'].field.widget.attrs['placeholder'] = 'e.g. 2421'
+        self.filters['instructor'].field.widget.attrs['placeholder'] = 'e.g. Rob LaTour'
+
+        self.filters['term'].field.widget.attrs.update({'class': "w-full bg-white border border-gray-300 rounded py-2 px-4 block appearance-none leading-normal"})
+        self.filters['subject'].field.widget.attrs.update({'class': "w-full bg-white border border-gray-300 rounded py-2 px-4 block appearance-none leading-normal"})
+        self.filters['number'].field.widget.attrs.update({'class': "w-full bg-white border border-gray-300 rounded py-2 px-4 block appearance-none leading-normal"})
+        self.filters['instructor'].field.widget.attrs.update({'class': "w-full bg-white border border-gray-300 rounded py-2 px-4 block appearance-none leading-normal"})
+
     def is_valid(self):
         """Override is_valid to check if term is present and either course or instructor is present"""
 

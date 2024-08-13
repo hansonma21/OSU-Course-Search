@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 from .forms import SearchForm
-from .models import Course, Course_Section, Department, Error_Log, Search_Query, Term
+from .models import Course, Course_Section, Department, Error_Log, Search_Query, Term, News
 from .filters import Course_SectionFilter
 
 # Create your views here.
@@ -92,19 +92,22 @@ def index(request):
             course_sections = myFilter.qs
 
             if course_sections.exists():
-                course_id_list = course_sections.values_list('course').distinct()
-                courses = Course.objects.filter(id__in=course_id_list).order_by('department__short_name', 'number').iterator()
+                if course_sections.count() > 250:
+                    error_message = "Too many results found. Please narrow your search."
+                else:
+                    course_id_list = course_sections.values_list('course').distinct()
+                    courses = Course.objects.filter(id__in=course_id_list).order_by('department__short_name', 'number').iterator()
 
-                course_dict = {}
-                for course in courses:
-                    course_sections_for_course = course_sections.filter(course=course)
-                    # group the course_sections_for_course by link_number
-                    course_dict[course] = {}
-                    for section in course_sections_for_course:
-                        if section.link_number in course_dict[course]:
-                            course_dict[course][section.link_number].append(section)
-                        else:
-                            course_dict[course][section.link_number] = [section]
+                    course_dict = {}
+                    for course in courses:
+                        course_sections_for_course = course_sections.filter(course=course).distinct()
+                        # group the course_sections_for_course by link_number
+                        course_dict[course] = {}
+                        for section in course_sections_for_course:
+                            if section.link_number in course_dict[course]:
+                                course_dict[course][section.link_number].append(section)
+                            else:
+                                course_dict[course][section.link_number] = [section]
                     
             else:
                 error_message = "No results found. Please try again."
@@ -116,6 +119,15 @@ def index(request):
         # if the user has not submitted the form, create an empty filter instance
         myFilter = Course_SectionFilter(request.GET)
         return render(request, "search/index.html", context={"myFilter": myFilter})
+
+def learn_more_view(request):
+    return render(request, "search/learn_more.html")
+
+def news_view(request):
+    # TODO: get the latest news from the database
+    news = News.objects.filter(display=True)
+    context = {'news': news}
+    return render(request, 'search/news.html', context=context)
 
 # def search(request):
 #     if request.method == "POST":

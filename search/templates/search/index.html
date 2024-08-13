@@ -1,13 +1,157 @@
-<h1>OSU Course Search</h1>
+{% extends 'search/base.html' %}
 
-<form action="" method="post">
+{% block content %}
+
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-10">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">OSU Course Search</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Search for the instructors of your courses at Ohio State University by entering a course number, course name, or instructor name.</p>
+            {% if error_message %}
+                <span class="text-red-500 font-bold">{{ error_message }}</span>
+            {% endif %}
+        </div>
+
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <div class="flex flex-wrap -m-2">
+                <div class="p-2 w-full">
+                    <div class="relative">
+                        {% comment %} <label for="course_search" class="leading-7 text-sm text-gray-600">Search for Courses</label> {% endcomment %}
+                        <form action="{% url 'search:index' %}" method="post">
+                            {% csrf_token %}
+                            {% comment %} 4 fields, Term (select), Subject (select), Course Number (text input), Instructor (text input) {% endcomment %}
+                            <div class="grid grid-cols-4 gap-4 mb-4">
+                                <div>
+                                    <label for="term" class="leading-7 text-m text-gray-600">Term</label>
+                                    {{ myFilter.form.term }}
+                                </div>
+                                <div>
+                                    <label for="subject" class="leading-7 text-m text-gray-600">Subject</label>
+                                    {{ myFilter.form.subject }}
+                                </div>
+                                <div>
+                                    <label for="course_number" class="leading-7 text-m text-gray-600">Course Number</label>
+                                    {{ myFilter.form.number }}
+                                </div>
+                                <div>
+                                    <label for="instructor" class="leading-7 text-m text-gray-600">Instructor</label>
+                                    {{ myFilter.form.instructor }}
+                                </div>
+
+                            {% comment %} {{ myFilter.form.as_p }} {% endcomment %}
+                            </div>
+
+                            <div class="flex justify-center">
+                                <button type="submit" class="text-white bg-red-600 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% comment %} <form action="" method="post">
     {% csrf_token %}
+    <h1 class="text-2xl font-semibold mb-4">Search</h1>
     {{ myFilter.form.as_table }}
     <input type="submit" value="Submit">
-</form>
+</form> {% endcomment %}
+
 
 {% if course_dict %}
-<table>
+<h1 class="text-3xl font-semibold text-center">Sections</h2>
+<div class="flex flex-wrap justify-center">
+    <div class="p-4 mt-4">
+
+        {% for course, course_sections in course_dict.items %}
+            <div class="bg-red-600 p-4 rounded-lg shadow-md mb-4">
+                <h3 class="text-xl font-semibold mb-4 text-white">{{ course.department.short_name }} {{ course.number }}{% if course.name %} - {{ course.name }}{% endif %}</h3>
+                {% for link_num, sections in course_sections.items %}
+                    <div class="p-4 bg-gray-100 mb-2 rounded-lg">
+                        <!-- Headings for each group -->
+                        <div class="grid grid-cols-7 gap-4 mb-2 font-bold text-center">
+                            <div>Section ID</div>
+                            <div>Section Info</div>
+                            <div>Days and Times</div>
+                            <div>Room</div>
+                            <div>Instructor(s)</div>
+                            <div>Meeting Dates</div>
+                            <div>Enrollment</div>
+                        </div>
+                        {% for section in sections %}
+                            {% comment %} <tr>
+                                <th>Section ID</th>
+                                <th>Section Info</th>
+                                <th>Days and Times</th>
+                                <th>Room</th>
+                                <th>Instructor(s)</th>
+                                <th>Meeting Dates</th>
+                                <th>Enrollment</th>
+                            </tr> {% endcomment %}
+                            <div class="grid grid-cols-7 gap-2 bg-gray-200 rounded-lg mb-1 p-1 text-center">
+                                <div>{{ section.section_id }}</div>
+                                <div>
+                                    {% if section.section_info %}
+                                        {{ section.section_info }}
+                                    {% else %}
+                                        {{ section.barrett_data_json.type }}
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if section.days_and_times %}
+                                        {{ section.days_and_times }}
+                                    {% else %}
+                                        {{ section.barrett_data_json.days }} {{ section.barrett_data_json.time }}
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if section.room %}
+                                        {{ section.room }}
+                                    {% else %}
+                                        {{ section.barrett_data_json.location }}
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if section.instructors.all %}
+                                        {% for instructor in section.instructors.all %}
+                                            {{ instructor.first_name }} {{ instructor.last_name }}<br>
+                                        {% endfor %}
+                                    {% else %}
+                                        {% for instructor in section.barrett_data_json.instructors %}
+                                            {{ instructor }}<br>
+                                        {% empty %}
+                                            UNKNOWN
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if section.start_date or section.end_date %}
+                                        {{ section.start_date }} - {{ section.end_date }}
+                                    {% else %}
+                                        {{ section.barrett_data_json.duration }}
+                                    {% endif %}
+                                </div>
+                                <div>
+                                    {% if section.availability %}
+                                        {{ section.availability }} - {{ section.barrett_data_json.enrolled }}/{{ section.barrett_data_json.limit }}{{ section.barrett_data_json.waitlist }}
+                                    {% else %}
+                                        {{ section.barrett_data_json.enrolled }}/{{ section.barrett_data_json.limit }}{{ section.barrett_data_json.waitlist }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+</div>
+
+{% comment %} <table>
     <tbody>
         {% for course, course_sections in course_dict.items %}
             <tr>
@@ -97,9 +241,6 @@
             </tr>
         {% endfor %}
     </tbody>
-</table>
+</table> {% endcomment %}
 {% endif %}
-
-{% if error_message %}
-    <p><strong>{{ error_message }}</strong></p>
-{% endif %}
+{% endblock %}

@@ -33,10 +33,6 @@ services:
     image: redis:alpine
     ports:
       - 6379:6379
-  selenium:
-    image: selenium/standalone-chrome:latest
-    volumes:
-      - /dev/shm:/dev/shm
 
 volumes:
   postgres_data:

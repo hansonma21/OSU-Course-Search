@@ -60,7 +60,7 @@ class Course_SectionAdmin(admin.ModelAdmin):
         ("Barret Data", {"fields": ["barrett_data_json"]}),
     ]
 
-    list_display = ["course", "term", "section_id", "link_number", "availability", "barrett_data_json"]
+    list_display = ["course", "term", "section_id", "link_number", "availability", "barrett_data_json", "created_date", "updated_date"]
 
     search_fields = ["section_id", "course__department__short_name", "course__number", "term__name", "instructors__last_name"]
 
@@ -82,6 +82,15 @@ class Error_LogAdmin(admin.ModelAdmin):
     list_display = ["function_name", "error_message", "timestamp"]
     list_filter = ["function_name"]
 
+class NewsAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['title', 'content', 'display']}),
+    ]
+
+    list_display = ['title', 'date_posted', 'display']
+    list_filter = ['date_posted', 'display']
+    search_fields = ['title', 'content']
+
 class ScheduleAdmin(q_admin.ScheduleAdmin):
     fieldsets = [
 
@@ -95,5 +104,6 @@ admin.site.register(Instructor, InstructorAdmin)
 admin.site.register(Course_Section, Course_SectionAdmin)
 admin.site.register(Search_Query, Search_QueryAdmin)
 admin.site.register(Error_Log, Error_LogAdmin)
+admin.site.register(News, NewsAdmin)
 # admin.site.register(q_models., BruhAdmin)
 # admin.site.register()

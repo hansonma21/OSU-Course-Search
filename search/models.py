@@ -110,6 +110,9 @@ class Course_Section(models.Model):
     term = models.ForeignKey(Term, on_delete=models.CASCADE) # referencing a Term
     link_number = models.IntegerField(null=True) # link multiple course sections together (linked sections have the same link_number)
 
+    created_date = models.DateTimeField(auto_now_add=True, null=True) # e.g. 2023-08-22 09:35:00
+    updated_date = models.DateTimeField(auto_now=True, null=True) # e.g. 2023-08-22 09:35:00
+
     instructors = models.ManyToManyField(Instructor) # only need one many to many field to represent many to many relationship of sections and instructors
 
     section_id = models.IntegerField() # e.g. 9510
@@ -157,3 +160,16 @@ class Error_Log(models.Model):
 
     def __str__(self):
         return '{}: {} - {}'.format(self.function_name, self.error_message, self.timestamp.strftime('%Y-%m-%d %H:%M:%S'))
+    
+class News(models.Model):
+    """A model to store news/updates articles"""
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    date_posted = models.DateTimeField(auto_now_add=True)
+    display = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['-date_posted']
+    
+    def __str__(self):
+        return self.title
