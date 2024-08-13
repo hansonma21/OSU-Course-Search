@@ -10,3 +10,4 @@ testcourses-1248.json
 test.html
 test_prettified.html
 Procfile
+db.sqlite3

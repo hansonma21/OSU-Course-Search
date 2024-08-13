@@ -3,6 +3,7 @@ venv
 new_venv
 old.env
 data
+test.py
 
 *.pyc
 __pycache
