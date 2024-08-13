@@ -54,6 +54,9 @@ class Course(models.Model):
     number = models.CharField(max_length=20) # e.g. 2421
     description = models.TextField(null=True) # e.g. Introduction to computer architecture at machine...
 
+    created_date = models.DateTimeField(auto_now_add=True, null=True) # e.g. 2023-08-22 09:35:00
+    updated_date = models.DateTimeField(auto_now=True, null=True) # e.g. 2023-08-22 09:35:00
+
     terms = models.ManyToManyField(Term) # many to many relationship with Term
 
     # allows access to Course objects by department short_name and course number
@@ -91,6 +94,9 @@ class Instructor(models.Model):
     first_name = models.CharField(max_length=100) # e.g. Mukul
     last_name = models.CharField(max_length=100) # e.g. Soundarajan
     department = models.ForeignKey(Department, on_delete=models.CASCADE) # referencing a Department
+
+    created_date = models.DateTimeField(auto_now_add=True, null=True) # e.g. 2023-08-22 09:35:00
+    updated_date = models.DateTimeField(auto_now=True, null=True) # e.g. 2023-08-22 09:35:00
 
     # ensures that the first_name, last_name, and department are unique
     class Meta:

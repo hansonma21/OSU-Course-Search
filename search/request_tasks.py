@@ -210,6 +210,8 @@ class CourseInstructorScraper(OSUCourseScraper):
                 meeting_dates = rowData[5].text.strip().split("\n")
                 meeting_dates = meeting_dates[0].strip()
                 # only get the first two for start and end date
+                # get up to first \r if it exists
+                meeting_dates = meeting_dates.split("\r")[0]
                 dates = meeting_dates.split(" - ")
                 start_date = dates[0].strip()
                 end_date = dates[1].strip()
@@ -242,6 +244,7 @@ class CourseInstructorScraper(OSUCourseScraper):
         self._instructors = Instructor.objects.filter(department__short_name=self.department)
 
         for instructor in self._instructors:
+            print("Currently processing instructor: ", instructor)
             self._current_instructor = instructor
 
             self._session, self._cookie, self._sessionId = self._create_new_session()
@@ -365,8 +368,8 @@ class CourseInstructorScraper(OSUCourseScraper):
             if instructor_info[0].lower() != "to be announced":
                 for instructor_str in instructor_info:
                     name_splits = instructor_str.split(" ")
-                    first_name = name_splits[0]
-                    last_name = name_splits[-1]
+                    first_name = name_splits[0].strip()
+                    last_name = name_splits[-1].strip()
                     course_section_dept = course_section.course.department
                     try:
                         instructor_to_add = Instructor.objects.get(first_name=first_name, last_name=last_name, department=course_section_dept)
@@ -524,8 +527,8 @@ class InstructorScraper(OSUCourseScraper):
             if instructor_info[0].lower() != "to be announced":
                 for instructor_str in instructor_info:
                     name_splits = instructor_str.split(" ")
-                    first_name = name_splits[0]
-                    last_name = name_splits[-1]
+                    first_name = name_splits[0].strip()
+                    last_name = name_splits[-1].strip()
                     instructor_dept = course.department
                     try:
                         instructor_to_add = Instructor.objects.get(first_name=first_name, last_name=last_name, department=instructor_dept)
@@ -564,6 +567,7 @@ class InstructorScraper(OSUCourseScraper):
         self._courses = Course.objects.filter(department__short_name=self.department)
 
         for course in self._courses:
+            print("Currently processing course: ", course)
             self._current_course = course
 
             self._session, self._cookie, self._sessionId = self._create_new_session()
@@ -626,7 +630,13 @@ def add_new_instructors(term: int, department: str):
                                                 function_name="add_new_instructors")
         error_log.save()
 
-
+def clean_instructors():
+    """Cleans the instructors by removing any instructors with a carriage return in their first or last name"""
+    instructors = Instructor.objects.all()
+    for instructor in instructors:
+        if "\r" in instructor.first_name or "\r" in instructor.last_name:
+            print("Deleting instructor: ", instructor)
+            instructor.delete()
 
 
 
