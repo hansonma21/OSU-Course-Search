@@ -3,3 +3,10 @@
 .new_venv
 .git
 .gitignore
+testclasses-ALL-1242-1244-1248.json
+testcourses-1242.json
+testcourses-1244.json
+testcourses-1248.json
+test.html
+test_prettified.html
+Procfile
