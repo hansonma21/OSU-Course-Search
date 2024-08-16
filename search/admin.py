@@ -36,7 +36,7 @@ class CourseAdmin(admin.ModelAdmin):
     ]
 
     list_filter = ["department", "number"]
-    list_display = ["department", "number", "name"]
+    list_display = ["department", "number", "name", "created_date", "updated_date"]
     search_fields = ["department__short_name", "number", "name"]
 
 
@@ -47,7 +47,7 @@ class InstructorAdmin(admin.ModelAdmin):
     ]
 
     list_filter = ["department", "first_name", "last_name"]
-    list_display = ["first_name", "last_name", "department"]
+    list_display = ["first_name", "last_name", "department", "created_date", "updated_date"]
 
     search_fields = ["department__short_name", "first_name", "last_name", "id"]
 
